@@ -112,8 +112,15 @@ section:nth-of-type(3) img {
     height: 20px;
 }
 
-section:nth-of-type(4)>a {
+section:nth-of-type(4) a {
     padding: 4px 8px;
     background-color: #ededed;
     border-radius: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+section:nth-of-type(4)>div {
+    display: flex;
+    flex-wrap: wrap;
 }

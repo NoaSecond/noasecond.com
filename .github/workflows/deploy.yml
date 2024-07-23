@@ -1,0 +1,38 @@
+name: Deploy to FTP
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Install FTP client
+      run: sudo apt-get install -y lftp
+      
+    - name: Upload files via FTP
+      run: |
+        lftp -c "open -u ${{ secrets.FTP_USERNAME }},$FTP_PASSWORD $FTP_SERVER; \
+                 set ssl:verify-certificate no; \
+                 mirror --reverse --delete \
+                        --exclude README.md \
+                        --exclude LICENSE \
+                        --exclude .github* \
+                        --exclude .git* \
+                        --exclude .gitignore \
+                        --exclude .gitattributes \
+                        --exclude .vscode* \
+                        --exclude .DS_Store* \
+                        --exclude .editorconfig* \
+                        --exclude PHPMailer-6.9.1* \
+                        . /"
+      env:
+        FTP_SERVER: ${{ secrets.FTP_SERVER }}
+        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}

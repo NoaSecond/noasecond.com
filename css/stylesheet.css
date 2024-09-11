@@ -62,7 +62,8 @@ button {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     color: var(--color-text);
     margin: 0;
     padding: 0;
@@ -85,7 +86,9 @@ h3 {
     color: gray;
 }
 
-a {
+a, h4 {
+    font-size: 1rem;
+    font-weight: 400;
     text-decoration: none;
     color: var(--color-text);
 }
@@ -108,11 +111,27 @@ section:last-of-type {
     margin-bottom: 0;
 }
 
+/* Section 1 */
+
 section:nth-of-type(1)>img {
     border-radius: 50%;
     width: 150px;
     height: 150px;
 }
+
+section:nth-of-type(1)>a {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+section:nth-of-type(1)>a>img {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+/* Section 2 */
 
 section:nth-of-type(2) {
     display: flex;
@@ -135,6 +154,8 @@ section:nth-of-type(2)>a:hover, section:nth-of-type(3)>a:hover {
     text-decoration: underline gray solid 1px;
 }
 
+/* Section 3 */
+
 section:nth-of-type(3) {
     display: flex;
     flex-direction: column;
@@ -150,6 +171,8 @@ section:nth-of-type(3) img {
     width: 20px;
     height: 20px;
 }
+
+/* Section 4 */
 
 section:nth-of-type(4) a {
     padding: 4px 8px;

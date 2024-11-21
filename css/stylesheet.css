@@ -47,6 +47,12 @@ main {
     padding: 25px;
 }
 
+@media (min-width: 600px) {
+    main {
+        min-width: 500px;
+    }
+}
+
 button {
     background-color: transparent;
     border: none;

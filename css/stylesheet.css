@@ -45,6 +45,7 @@ body {
 
 main {
     padding: 25px;
+    width: 600px;
 }
 
 @media (min-width: 600px) {

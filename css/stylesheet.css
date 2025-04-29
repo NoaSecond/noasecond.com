@@ -9,7 +9,7 @@
     --color-text: #000000;
     --color-bg-interest: #ededed;
 }
-  
+
 [data-theme="dark"] {
     --color-bg-section: #1d1d1d;
     --color-text: #f1f1f1;
@@ -92,7 +92,8 @@ h3 {
     color: gray;
 }
 
-a, h4 {
+a,
+h4 {
     font-size: 1rem;
     font-weight: 400;
     text-decoration: none;
@@ -119,7 +120,7 @@ section:last-of-type {
 
 /* Section 1 */
 
-section:nth-of-type(1)>img {
+section:nth-of-type(1)>.flip-card img {
     border-radius: 50%;
     width: 150px;
     height: 150px;
@@ -137,6 +138,39 @@ section:nth-of-type(1)>a>img {
     height: 20px;
 }
 
+section:nth-of-type(1) .flip-card {
+    background-color: transparent;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
+
+section:nth-of-type(1) .flip-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+section:nth-of-type(1) .flip-card:hover .flip-content {
+    transform: rotateY(180deg);
+}
+
+section:nth-of-type(1) .flip-front,
+section:nth-of-type(1) .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+section:nth-of-type(1) .flip-back {
+    transform: rotateY(180deg);
+}
+
 /* Section 2 */
 
 section:nth-of-type(2) {
@@ -152,11 +186,13 @@ section:nth-of-type(2)>a::before {
     height: 20px;
 }
 
-section:nth-of-type(2)>a, section:nth-of-type(3)>a {
+section:nth-of-type(2)>a,
+section:nth-of-type(3)>a {
     text-decoration: underline transparent solid 1px;
 }
 
-section:nth-of-type(2)>a:hover, section:nth-of-type(3)>a:hover {
+section:nth-of-type(2)>a:hover,
+section:nth-of-type(3)>a:hover {
     text-decoration: underline gray solid 1px;
 }
 

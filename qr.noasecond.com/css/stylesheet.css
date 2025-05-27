@@ -5,14 +5,13 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg: #121212;
+        --bg: #0D0D0D;
         --text: #ffffff;
     }
 }
 
 * {
     transition: background-color 0.3s ease, color 0.3s ease;
-
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 300;
@@ -26,11 +25,24 @@ body {
     font-family: sans-serif;
     text-align: center;
     padding: 2rem;
+    margin: 0;
+    padding: 0;
+    background: #A770EF;
+    background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);
+    background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);
 }
 
 main {
     display: flex;
     justify-content: space-between;
+    height: 100vh;
+    width: 100vw;
+}
+
+main>div {
+    border-radius: 15px;
+    background-color: var(--bg);
+    margin: 50px;
 }
 
 .controls {
@@ -42,6 +54,10 @@ select,
 button {
     margin: 0.5rem;
     padding: 0.4rem;
+}
+
+button {
+    cursor: pointer;
 }
 
 #qr-code svg {

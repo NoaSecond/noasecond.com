@@ -1,3 +1,7 @@
+window.addEventListener("DOMContentLoaded", () => {
+    loadSettings();
+});
+
 function getSettingsFromURL() {
     const params = new URLSearchParams(window.location.search);
     return {
@@ -10,21 +14,25 @@ function getSettingsFromURL() {
     };
 }
 
-const logoInput = document.getElementById("logoInput");
-const logoPreview = document.getElementById("logoPreview");
-
 logoInput.addEventListener("change", () => {
+    const logoInput = document.getElementById("logoInput");
+    const logoPreview = document.getElementById("logoPreview");
     const file = logoInput.files[0];
+    const marginInput = document.getElementById("marginInput");
+    const marginLabel = document.querySelector("label[for='marginInput']");
     if (file) {
         const imageURL = URL.createObjectURL(file);
         logoPreview.src = imageURL;
         logoPreview.style.display = "block";
+        marginInput.style.display = "inline-block";
+        marginLabel.style.display = "inline-block";
     } else {
         logoPreview.src = "";
         logoPreview.style.display = "none";
+        marginInput.style.display = "none";
+        marginLabel.style.display = "none";
     }
 });
-
 
 const qrCode = new QRCodeStyling({
     width: 300,
@@ -39,7 +47,7 @@ const qrCode = new QRCodeStyling({
 const qrContainer = document.getElementById("qr-code");
 qrCode.append(qrContainer);
 
-function updateQR() {
+function updateQR(save = true) {
     const text = document.getElementById("text").value;
     const dotColor = document.getElementById("dotColor").value;
     const bgColor = document.getElementById("bgColor").value;
@@ -63,6 +71,13 @@ function updateQR() {
             margin: margin
         }
     });
+
+    if (save && text.trim() !== "") {
+        saveSettings();
+    }
+
+    updateFavicon(dotColor, bgColor);
+
     // Relancer animation
     const qrSvg = qrContainer.querySelector("svg");
     if (qrSvg) {
@@ -70,9 +85,6 @@ function updateQR() {
         qrSvg.offsetHeight; // Trigger reflow
         qrSvg.style.animation = null;
     }
-
-    saveSettings();
-    updateFavicon(dotColor, bgColor);
 
 }
 
@@ -107,13 +119,9 @@ function loadSettings() {
     document.getElementById("marginInput").value = settings.margin;
     document.getElementById("exportFormat").value = settings.format;
 
-    updateQR();
+    updateQR(false);
+    displayHistory();
 }
-
-
-window.addEventListener("DOMContentLoaded", () => {
-    loadSettings();
-});
 
 function copyShareLink() {
     qrCode.getRawData("png").then(blob => {
@@ -205,8 +213,16 @@ function displayHistory() {
     });
 }
 
+function clearHistory() {
+    if (confirm("Souhaitez-vous vraiment effacer l’historique ?")) {
+        localStorage.removeItem("qrHistory");
+        document.getElementById("historyList").innerHTML = "";
+        alert("✅ Historique effacé !");
+    }
+}
+
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/service-worker.js")
-    .then(() => console.log("✅ Service Worker enregistré"))
-    .catch(err => console.error("❌ Erreur SW:", err));
+    navigator.serviceWorker.register("/service-worker.js")
+        .then(() => console.log("✅ Service Worker enregistré"))
+        .catch(err => console.error("❌ Erreur SW:", err));
 }

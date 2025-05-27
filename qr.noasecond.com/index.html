@@ -4,7 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Générez facilement des QR Codes personnalisés avec couleurs, logo et différents styles.">
+    <meta name="description"
+        content="Générez facilement des QR Codes gratuits personnalisés avec couleurs, logo et différents styles.">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords"
+        content="QR Code, Générateur QR Code, QR Code personnalisé, QR Code gratuit, QR Code en ligne, QR Code avec logo, QR Code couleur, Export QR Code, PNG, SVG, JPEG, QR Code France, Générateur de QR Code en français">
+    <meta name="author" content="Noa Second">
     <title>Générateur de QR Code</title>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#000000">
@@ -19,6 +24,49 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Générateur de QR Code",
+        "url": "https://qr.noasecond.com",
+        "applicationCategory": "Utility",
+        "operatingSystem": "All",
+        "description": "Générez facilement des QR Codes gratuits personnalisés avec couleurs, logo et différents styles.",
+        "author": {
+            "@type": "Person",
+            "name": "Noa Second",
+            "url": "https://noasecond.com"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        }
+    }
+    </script>
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Générateur de QR Code Gratuit et Personnalisé" />
+    <meta property="og:description"
+        content="Créez vos QR Codes personnalisés gratuitement : couleurs, logo, styles et export en PNG, SVG, JPEG." />
+    <meta property="og:image" content="https://qr.noasecond.com" />
+    <meta property="og:url" content="https://qr.noasecond.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Générateur de QR Code" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Générateur de QR Code Gratuit et Personnalisé" />
+    <meta name="twitter:description"
+        content="Créez vos QR Codes personnalisés gratuitement : couleurs, logo, styles et export en PNG, SVG, JPEG." />
+    <meta name="twitter:image" content="https://qr.noasecond.com" />
+    <meta name="twitter:site" content="@noasecond" />
+    <meta name="twitter:creator" content="@noasecond" />
+    <!-- Microdata -->
+    <meta itemprop="name" content="Générateur de QR Code Gratuit et Personnalisé" />
+    <meta itemprop="description"
+        content="Créez vos QR Codes personnalisés gratuitement : couleurs, logo, styles et export en PNG, SVG, JPEG." />
+    <meta itemprop="image" content="https://qr.noasecond.com" />
 </head>
 
 <body>
@@ -39,8 +87,8 @@
                 <br>
                 <img id="logoPreview" src="" alt="Aperçu du logo"
                     style="max-height: 100px; margin-top: 10px; display: none;">
-                <label for="marginInput">Marge du logo :</label>
-                <input type="number" id="marginInput" value="10" min="0" max="100">
+                <label for="marginInput" style="display: none;">Marge du logo :</label>
+                <input type="number" id="marginInput" value="10" min="0" max="100" style="display: none;">
                 <label for="exportFormat">Format d'export :</label>
                 <select id="exportFormat">
                     <option value="png">PNG</option>
@@ -61,6 +109,7 @@
         <div>
             <h2>🕓 Historique</h2>
             <ul id="historyList"></ul>
+            <button onclick="clearHistory()">🗑️ Effacer l'historique</button>
         </div>
     </main>
 </body>

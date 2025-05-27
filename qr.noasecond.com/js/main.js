@@ -4,10 +4,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
 function getSettingsFromURL() {
     const params = new URLSearchParams(window.location.search);
+    console.log("🔄 Chargement des paramètres depuis l'URL : ", Object.fromEntries(params.entries()));
     return {
-        text: params.get("text") || "",
-        dotColor: params.get("dotColor") || "#000000",
-        bgColor: params.get("bgColor") || "#ffffff",
+        text: params.get("text") || "https://example.com",
+        dotColor: params.get("dotColor") ? decodeURIComponent(params.get("dotColor")) : "#000000",
+        bgColor: params.get("bgColor") ? decodeURIComponent(params.get("bgColor")) : "#ffffff",
         dotStyle: params.get("dotStyle") || "square",
         margin: params.get("margin") || 10,
         format: params.get("format") || "png"
@@ -73,7 +74,15 @@ function updateQR(save = true) {
     });
 
     if (save && text.trim() !== "") {
-        saveSettings();
+        const settings = {
+            text: document.getElementById("text").value,
+            dotColor: document.getElementById("dotColor").value,
+            bgColor: document.getElementById("bgColor").value,
+            dotStyle: document.getElementById("dotStyle").value,
+            margin: document.getElementById("marginInput").value,
+            format: document.getElementById("exportFormat").value
+        };
+        addToHistory(settings);
     }
 
     updateFavicon(dotColor, bgColor);
@@ -86,6 +95,7 @@ function updateQR(save = true) {
         qrSvg.style.animation = null;
     }
 
+    console.log("🔄 QR Code mis à jour");
 }
 
 function downloadQR() {
@@ -103,14 +113,10 @@ function saveSettings() {
         format: document.getElementById("exportFormat").value
     };
     localStorage.setItem("qrSettings", JSON.stringify(settings));
-    addToHistory(settings);
 }
 
 function loadSettings() {
-    const urlSettings = getSettingsFromURL();
-    const savedSettings = JSON.parse(localStorage.getItem("qrSettings")) || {};
-
-    const settings = { ...savedSettings, ...urlSettings };
+    const settings = getSettingsFromURL();
 
     document.getElementById("text").value = settings.text;
     document.getElementById("dotColor").value = settings.dotColor;
@@ -180,9 +186,9 @@ function copySettingsLink() {
     const text = encodeURIComponent(document.getElementById("text").value);
     const dotColor = encodeURIComponent(document.getElementById("dotColor").value);
     const bgColor = encodeURIComponent(document.getElementById("bgColor").value);
-    const dotStyle = document.getElementById("dotStyle").value;
-    const margin = document.getElementById("marginInput").value;
-    const format = document.getElementById("exportFormat").value;
+    const dotStyle = encodeURIComponent(document.getElementById("dotStyle").value);
+    const margin = encodeURIComponent(document.getElementById("marginInput").value);
+    const format = encodeURIComponent(document.getElementById("exportFormat").value);
 
     const url = `${window.location.origin}${window.location.pathname}?text=${text}&dotColor=${dotColor}&bgColor=${bgColor}&dotStyle=${dotStyle}&margin=${margin}&format=${format}`;
 
@@ -196,6 +202,7 @@ function addToHistory(settings) {
     history.unshift(settings);
     history = history.slice(0, 10); // max 10 entrées
     localStorage.setItem("qrHistory", JSON.stringify(history));
+    console.log("🕓 QR Code ajouté à l'historique");
     displayHistory();
 }
 
@@ -206,7 +213,7 @@ function displayHistory() {
     history.forEach((s, i) => {
         const li = document.createElement("li");
         const a = document.createElement("a");
-        a.href = `?text=${encodeURIComponent(s.text)}&dotColor=${s.dotColor}&bgColor=${s.bgColor}&dotStyle=${s.dotStyle}&margin=${s.margin}&format=${s.format}`;
+        a.href = `?text=${encodeURIComponent(s.text)}&dotColor=${encodeURIComponent(s.dotColor)}&bgColor=${encodeURIComponent(s.bgColor)}&dotStyle=${encodeURIComponent(s.dotStyle)}&margin=${encodeURIComponent(s.margin)}&format=${encodeURIComponent(s.format)}`;
         a.textContent = `${s.text}`;
         li.appendChild(a);
         list.appendChild(li);

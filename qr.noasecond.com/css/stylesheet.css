@@ -1,0 +1,88 @@
+:root {
+    --bg: #ffffff;
+    --text: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #121212;
+        --text: #ffffff;
+    }
+}
+
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: sans-serif;
+    text-align: center;
+    padding: 2rem;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.controls {
+    margin: 1rem 0;
+}
+
+input,
+select,
+button {
+    margin: 0.5rem;
+    padding: 0.4rem;
+}
+
+#qr-code svg {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    input,
+    select,
+    button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .controls {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img#logoPreview {
+        max-width: 80%;
+    }
+}

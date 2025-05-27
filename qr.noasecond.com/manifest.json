@@ -1,0 +1,21 @@
+{
+  "name": "QR Code Générateur",
+  "short_name": "QR Code",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "description": "Générateur de QR Code personnalisable avec logo, couleur, et plus.",
+  "icons": [
+    {
+      "src": "assets/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

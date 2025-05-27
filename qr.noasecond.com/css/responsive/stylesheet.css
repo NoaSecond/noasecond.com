@@ -7,6 +7,10 @@
         width: 100%;
     }
 
+    main>div {
+        margin: 25px;
+    }
+
     main>div#qr-generator .controls {
         display: flex;
     }
@@ -30,5 +34,11 @@
 
     img#logoPreview {
         max-width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+    main>div {
+        margin: 15px;
     }
 }

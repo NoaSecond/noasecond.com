@@ -87,6 +87,12 @@ main>div {
     flex-direction: column;
 }
 
+div#qr-code {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 main>div#qr-generator {
     justify-content: space-between;
 }

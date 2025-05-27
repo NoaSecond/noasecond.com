@@ -15,6 +15,7 @@
     <meta name="theme-color" content="#000000">
     <!-- CSS -->
     <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/responsive/stylesheet.css">
     <!-- JS -->
     <script src="js/qr-code-styling.js"></script>
     <script src="js/main.js" defer></script>
@@ -71,42 +72,44 @@
 
 <body>
     <main>
-        <div>
-            <h1>🎨 Générateur de QR Code</h1>
-            <div class="controls">
-                <button id="toggleTheme">🌗 Changer de thème</button>
-                <input type="text" id="text" placeholder="Lien ou texte" value="https://example.com">
-                <input type="color" id="dotColor" value="#000000">
-                <input type="color" id="bgColor" value="#ffffff">
-                <select id="dotStyle">
-                    <option value="square">Carré</option>
-                    <option value="rounded" selected>Arrondi</option>
-                    <option value="dots">Points</option>
-                </select>
-                <input type="file" id="logoInput" accept="image/*">
-                <br>
-                <img id="logoPreview" src="" alt="Aperçu du logo"
-                    style="max-height: 100px; margin-top: 10px; display: none;">
-                <label for="marginInput" style="display: none;">Marge du logo :</label>
-                <input type="number" id="marginInput" value="10" min="0" max="100" style="display: none;">
-                <label for="exportFormat">Format d'export :</label>
-                <select id="exportFormat">
-                    <option value="png">PNG</option>
-                    <option value="svg">SVG</option>
-                    <option value="jpeg">JPEG</option>
-                </select>
-                <br>
-                <button onclick="updateQR()">🔄 Mettre à jour</button>
-                <button onclick="downloadQR()">📥 Télécharger</button>
-                <br>
-                <button onclick="copyShareLink()">📤 Copier le lien de partage</button>
-                <span id="shareStatus" style="margin-left: 0.5rem;"></span>
-                <button onclick="copySettingsLink()">🔗 Copier le lien de configuration</button>
+        <div id="qr-generator">
+            <div>
+                <h1>🎨 Générateur de QR Code</h1>
+                <div class="controls">
+                    <button id="toggleTheme">🌗 Changer de thème</button>
+                    <input type="text" id="text" placeholder="Lien ou texte" value="https://example.com">
+                    <input type="color" id="dotColor" value="#000000">
+                    <input type="color" id="bgColor" value="#ffffff">
+                    <select id="dotStyle">
+                        <option value="square">Carré</option>
+                        <option value="rounded" selected>Arrondi</option>
+                        <option value="dots">Points</option>
+                    </select>
+                    <input type="file" id="logoInput" accept="image/*">
+                    <br>
+                    <img id="logoPreview" src="" alt="Aperçu du logo"
+                        style="max-height: 100px; margin-top: 10px; display: none;">
+                    <label for="marginInput" style="display: none;">Marge du logo :</label>
+                    <input type="number" id="marginInput" value="10" min="0" max="100" style="display: none;">
+                    <label for="exportFormat">Format d'export :</label>
+                    <select id="exportFormat">
+                        <option value="png">PNG</option>
+                        <option value="svg">SVG</option>
+                        <option value="jpeg">JPEG</option>
+                    </select>
+                    <br>
+                    <button onclick="updateQR()">🔄 Mettre à jour</button>
+                    <button onclick="downloadQR()">📥 Télécharger</button>
+                    <br>
+                    <button onclick="copyShareLink()">📤 Copier le lien de partage</button>
+                    <span id="shareStatus" style="margin-left: 0.5rem;"></span>
+                    <button onclick="copySettingsLink()">🔗 Copier le lien de configuration</button>
+                </div>
             </div>
             <div id="qr-code"></div>
             <a href="https://noasecond.com" target="_blank">Créé par Noa Second</a>
         </div>
-        <div>
+        <div id="history">
             <h1>🕓 Historique</h1>
             <ul id="historyList"></ul>
             <button onclick="clearHistory()">🗑️ Effacer l'historique</button>

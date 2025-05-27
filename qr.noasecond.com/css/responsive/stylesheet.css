@@ -1,0 +1,34 @@
+@media (max-width: 800px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    main>div#qr-generator .controls {
+        display: flex;
+    }
+
+    main>div#history {
+        height: 50%;
+    }
+
+    input,
+    select,
+    button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .controls {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img#logoPreview {
+        max-width: 80%;
+    }
+}

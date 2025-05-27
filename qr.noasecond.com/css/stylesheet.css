@@ -3,6 +3,30 @@
     --text: #000000;
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    z-index: 9999;
+}
+
+::-webkit-scrollbar-track {
+    background: #797979ab;
+    border-radius: 4px;
+    z-index: 9999;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 2.4px;
+    background-color: hsla(0, 0%, 100%, .2);
+    border-radius: 4px;
+    border: 1px solid transparent;
+    z-index: 9999;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: black;
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
         --bg: #0D0D0D;
@@ -58,6 +82,27 @@ main>div {
     border-radius: 15px;
     background-color: var(--bg);
     margin: 50px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+main>div#qr-generator {
+    justify-content: space-between;
+}
+
+main>div#history {
+    height: fit-content;
+    max-height: calc(100vh - 130px);
+}
+
+main>div#history button {
+    margin-top: 25px;
+}
+
+main>div#history>#historyList {
+    max-height: 100%;
+    overflow-y: scroll;
 }
 
 .controls {
@@ -75,6 +120,16 @@ button {
     cursor: pointer;
 }
 
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+    text-align: left;
+}
+
 #qr-code svg {
     animation: fadeIn 0.5s ease-in-out;
 }
@@ -86,34 +141,5 @@ button {
 
     to {
         opacity: 1;
-    }
-}
-
-@media (max-width: 600px) {
-    body {
-        padding: 1rem;
-    }
-
-    main {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    input,
-    select,
-    button {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .controls {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    img#logoPreview {
-        max-width: 80%;
     }
 }

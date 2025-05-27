@@ -95,7 +95,7 @@ function updateQR(save = true) {
         qrSvg.style.animation = null;
     }
 
-    console.log("🔄 QR Code mis à jour");
+    console.log("✅ QR Code mis à jour");
 }
 
 function downloadQR() {
@@ -200,7 +200,7 @@ function copySettingsLink() {
 function addToHistory(settings) {
     let history = JSON.parse(localStorage.getItem("qrHistory")) || [];
     history.unshift(settings);
-    history = history.slice(0, 10); // max 10 entrées
+    history = history.slice(0, 50); // max 50 entrées
     localStorage.setItem("qrHistory", JSON.stringify(history));
     console.log("🕓 QR Code ajouté à l'historique");
     displayHistory();
@@ -229,7 +229,7 @@ function clearHistory() {
 }
 
 if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/service-worker.js")
+    navigator.serviceWorker.register("/js/service-worker.js")
         .then(() => console.log("✅ Service Worker enregistré"))
         .catch(err => console.error("❌ Erreur SW:", err));
 }

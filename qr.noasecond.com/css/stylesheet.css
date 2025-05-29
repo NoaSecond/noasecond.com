@@ -120,6 +120,38 @@ select,
 button {
     margin: 0.5rem;
     padding: 0.4rem;
+    border-radius: 500px;
+    border: solid 1px transparent;
+    background-color: #f0f0f0;
+    color: black;
+    cursor: pointer;
+    outline: none;
+}
+
+input:hover,
+select:hover,
+button:hover {
+    background-color: #e0e0e0;
+}
+
+input:active,
+select:active,
+button:focus-visible {
+    border: solid 1px #ccc;
+}
+
+input[type=text] {
+    cursor: text;
+}
+
+input[type=file]::file-selector-button {
+    border-radius: 500px;
+    background-color: #f0f0f0;
+    outline: none;
+    border: solid 1px #ccc;
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
 }
 
 button {

@@ -31,6 +31,7 @@ jobs:
                         --exclude .DS_Store* \
                         --exclude .editorconfig* \
                         --exclude PHPMailer-6.9.1* \
+                        --exclude qr.noasecond.com/ \
                         . /"
       env:
         FTP_SERVER: ${{ secrets.FTP_SERVER }}

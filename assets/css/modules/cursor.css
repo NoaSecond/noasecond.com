@@ -11,12 +11,17 @@
     /* Click pass-through */
     opacity: 0;
     /* Hide initially to avoid top-left flicker on load */
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease-in-out;
 }
 
 body.cursor-visible .cursor-dot,
 body.cursor-visible .cursor-outline {
     opacity: 1;
+}
+
+body.cursor-idle .cursor-dot,
+body.cursor-idle .cursor-outline {
+    opacity: 0;
 }
 
 .cursor-dot {
@@ -42,4 +47,14 @@ body.hovering .cursor-outline {
     /* Slight tint */
     border-color: var(--highlight-color);
     /* Bright border */
+}
+
+/* Hide on Mobile/Touch devices */
+@media (max-width: 1024px),
+(pointer: coarse) {
+
+    .cursor-dot,
+    .cursor-outline {
+        display: none !important;
+    }
 }

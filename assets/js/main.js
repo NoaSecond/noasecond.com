@@ -1,44 +1,57 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- CUSTOM CURSOR ---
-    const cursorDot = document.createElement('div');
-    const cursorOutline = document.createElement('div');
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-    cursorDot.className = 'cursor-dot';
-    cursorOutline.className = 'cursor-outline';
+    if (!isTouchDevice) {
+        const cursorDot = document.createElement('div');
+        const cursorOutline = document.createElement('div');
 
-    document.body.appendChild(cursorDot);
-    document.body.appendChild(cursorOutline);
+        cursorDot.className = 'cursor-dot';
+        cursorOutline.className = 'cursor-outline';
 
-    window.addEventListener('mousemove', (e) => {
-        // Show cursor on first move
-        if (!document.body.classList.contains('cursor-visible')) {
-            document.body.classList.add('cursor-visible');
-        }
+        document.body.appendChild(cursorDot);
+        document.body.appendChild(cursorOutline);
 
-        const posX = e.clientX;
-        const posY = e.clientY;
+        let cursorTimeout;
 
-        // Dot follows instantly
-        cursorDot.style.left = `${posX}px`;
-        cursorDot.style.top = `${posY}px`;
+        window.addEventListener('mousemove', (e) => {
+            // Show cursor on first move and wake it up from idle
+            if (!document.body.classList.contains('cursor-visible')) {
+                document.body.classList.add('cursor-visible');
+            }
+            document.body.classList.remove('cursor-idle');
 
-        // Outline follows (CSS transition handles smoothing)
-        cursorOutline.style.left = `${posX}px`;
-        cursorOutline.style.top = `${posY}px`;
-    });
+            const posX = e.clientX;
+            const posY = e.clientY;
 
-    // Hover effects for cursor
-    const interactiveElements = document.querySelectorAll('a, button, .btn, .project-card, input, textarea, select, .social-icon');
+            // Dot follows instantly
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
 
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            document.body.classList.add('hovering');
+            // Outline follows (CSS transition handles smoothing)
+            cursorOutline.style.left = `${posX}px`;
+            cursorOutline.style.top = `${posY}px`;
+
+            // Reset inactivity timer
+            clearTimeout(cursorTimeout);
+            cursorTimeout = setTimeout(() => {
+                document.body.classList.add('cursor-idle');
+            }, 3000); // Hide after 3 seconds of inactivity
         });
-        el.addEventListener('mouseleave', () => {
-            document.body.classList.remove('hovering');
+
+        // Hover effects for cursor
+        const interactiveElements = document.querySelectorAll('a, button, .btn, .project-card, input, textarea, select, .social-icon');
+
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                document.body.classList.add('hovering');
+            });
+            el.addEventListener('mouseleave', () => {
+                document.body.classList.remove('hovering');
+            });
         });
-    });
+    }
 
     // --- SCROLL REVEAL ANIMATION ---
     const observeElements = document.querySelectorAll('.project-card, .glass-card, h2, .hero-content');

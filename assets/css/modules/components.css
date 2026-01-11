@@ -152,9 +152,10 @@
     border-radius: 20px;
     background-color: #000;
     /* Dark base to hide sub-pixel gaps */
-    background-size: 101% 101%;
-    /* Slight overshoot to eliminate ghost borders */
-    background-position: center;
+    background-size: cover, cover;
+    background-position: center, center;
+    background-clip: padding-box;
+    /* Prevent background from bleeding behind the border in weird ways */
     background-repeat: no-repeat;
     border: 1px solid var(--glass-border);
     cursor: none;
@@ -264,4 +265,14 @@
 .back-to-top:hover span {
     transform: translateY(-2px);
     text-shadow: 0 0 10px rgba(0, 245, 212, 0.5);
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 90px;
+        /* Move above the floating-nav to avoid overlap */
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
 }

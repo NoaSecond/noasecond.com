@@ -165,6 +165,36 @@
 }
 
 @media (max-width: 768px) {
+    .project-hero {
+        height: auto;
+        min-height: 80vh;
+        padding-bottom: 6rem;
+        padding-top: 8rem;
+    }
+
+    .project-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .project-meta {
+        gap: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .back-btn {
+        top: 1rem;
+        left: 20px;
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+
+    #project-details {
+        padding: 3rem 20px !important;
+        border-radius: 30px 30px 0 0;
+        margin-top: -3vh;
+    }
+
     .project-gallery {
         grid-template-columns: 1fr;
     }

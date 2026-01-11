@@ -1,0 +1,140 @@
+/* =========================================
+   STARS BACKGROUND EFFECT
+   ========================================= */
+
+:root {
+    /* --- RÉGLAGES DES ÉTOILES --- */
+    /* Vitesse du scintillement */
+    --star-vitesse-min: 12s;
+    --star-vitesse-max: 6s;
+
+    /* Opacité du scintillement */
+    --star-opacite-min: 0.2;
+    --star-opacite-max: 0.6;
+
+    /* Taille des étoiles */
+    --star-taille-min: 0.8px;
+    --star-taille-max: 2.2px;
+
+    /* Distance de dérive */
+    --star-derive-dist-min: 150px;
+    --star-derive-dist-max: 300px;
+
+    /* Vitesse de dérive */
+    --star-derive-vitesse-min: 10s;
+    --star-derive-vitesse-max: 50s;
+
+    /* Densité des étoiles */
+    --star-densite: 25%;
+    /* Valeur basse = plus d'étoiles, valeur haute = moins d'étoiles */
+    /* ---------------------------- */
+}
+
+.stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.star-layer {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    will-change: opacity, transform;
+}
+
+/* Variation entre les couches basée sur les paramètres */
+
+.star-layer-1 {
+    background-image:
+        radial-gradient(var(--star-taille-min) var(--star-taille-min) at 10% 10%, #ffffff, transparent),
+        radial-gradient(var(--star-taille-min) var(--star-taille-min) at 20% 40%, #ffffff, transparent),
+        radial-gradient(var(--star-taille-max) var(--star-taille-max) at 40% 20%, #ffffff, transparent),
+        radial-gradient(var(--star-taille-min) var(--star-taille-min) at 65% 15%, #ffffff, transparent),
+        radial-gradient(var(--star-taille-max) var(--star-taille-max) at 75% 85%, #ffffff, transparent),
+        radial-gradient(var(--star-taille-min) var(--star-taille-min) at 95% 75%, #ffffff, transparent);
+    background-size: var(--star-densite) var(--star-densite);
+    animation:
+        twinkle var(--star-vitesse-min) ease-in-out infinite alternate,
+        drift-1 var(--star-derive-vitesse-max) linear infinite;
+}
+
+.star-layer-2 {
+    background-image:
+        radial-gradient(calc(var(--star-taille-max) * 0.8) calc(var(--star-taille-max) * 0.8) at 15% 25%, var(--secondary-color), transparent),
+        radial-gradient(calc(var(--star-taille-min) * 1.2) calc(var(--star-taille-min) * 1.2) at 55% 15%, var(--highlight-color), transparent),
+        radial-gradient(calc(var(--star-taille-max) * 0.8) calc(var(--star-taille-max) * 0.8) at 90% 80%, var(--accent-color), transparent);
+    background-size: calc(var(--star-densite) * 1.4) calc(var(--star-densite) * 1.4);
+    animation:
+        twinkle var(--star-vitesse-max) ease-in-out infinite alternate-reverse,
+        drift-2 calc((var(--star-derive-vitesse-min) + var(--star-derive-vitesse-max)) / 2) linear infinite;
+}
+
+.star-layer-3 {
+    background-image:
+        radial-gradient(calc(var(--star-taille-min) * 0.9) calc(var(--star-taille-min) * 0.9) at 5% 45%, #ffffff, transparent),
+        radial-gradient(calc(var(--star-taille-min) * 0.9) calc(var(--star-taille-min) * 0.9) at 45% 85%, #ffffff, transparent),
+        radial-gradient(calc(var(--star-taille-min) * 0.9) calc(var(--star-taille-min) * 0.9) at 85% 25%, #ffffff, transparent);
+    background-size: calc(var(--star-densite) * 2) calc(var(--star-densite) * 2);
+    animation:
+        twinkle calc((var(--star-vitesse-min) + var(--star-vitesse-max)) / 2) ease-in-out infinite alternate,
+        drift-3 var(--star-derive-vitesse-min) linear infinite;
+}
+
+/* Animations utilisant les paramètres */
+
+@keyframes twinkle {
+    0% {
+        opacity: var(--star-opacite-min);
+        transform: scale(0.98);
+    }
+
+    100% {
+        opacity: var(--star-max-opacity);
+        transform: scale(1.02);
+    }
+}
+
+@keyframes drift-1 {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(calc(-1 * var(--star-derive-dist-min)));
+    }
+}
+
+@keyframes drift-2 {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(calc(-1 * var(--star-derive-dist-max)));
+    }
+}
+
+@keyframes drift-3 {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(calc(-1 * (var(--star-derive-dist-min) + var(--star-derive-dist-max)) / 2));
+    }
+}
+
+/* Désactivation sur mobile */
+@media (max-width: 768px) {
+    .stars-container {
+        display: none;
+    }
+}

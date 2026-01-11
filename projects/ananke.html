@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ananke | Noa Second</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/projects/project-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/favicon/site.webmanifest">
+</head>
+
+<body>
+
+    <a href="../index.html" class="back-btn">
+        <span class="material-symbols-rounded">arrow_back</span> Retour
+    </a>
+
+    <header class="project-hero">
+        <div class="hero-bg"
+            style="background: linear-gradient(rgba(5, 5, 16, 0.4), rgba(5, 5, 16, 0.9)), url('../assets/img/banners/ananke-banner.jpg') no-repeat center center/cover;"
+            fetchpriority="high">
+        </div>
+        <div class="container hero-content">
+            <h1>Ananke</h1>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="material-symbols-rounded">web</span>
+                    <span>Application Web Kanban</span>
+                </div>
+                <div class="meta-item">
+                    <span class="material-symbols-rounded">bug_report</span>
+                    <span>QA & Production</span>
+                </div>
+                <div class="meta-item">
+                    <span class="material-symbols-rounded">dns</span>
+                    <span>Self-Hosted Solution</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-down" id="project-scroll-btn">
+            <span class="material-symbols-rounded" style="font-size: 40px;">keyboard_arrow_down</span>
+        </div>
+    </header>
+
+    <main id="project-details" class="container" style="padding: 4rem 20px;">
+        <div class="glass-card hidden-reveal">
+            <h2>Vision du Projet</h2>
+            <p><strong>Ananke</strong> est née d'un besoin concret rencontré lors de mon expérience en tant que
+                <strong>QA Manager</strong>. Alors que mon équipe utilisait Trello pour la gestion du backlog d'un jeu
+                vidéo, la fin d'un essai premium a entraîné la perte de fonctionnalités cruciales, notamment les
+                <strong>champs personnalisés (Custom Fields)</strong>.
+            </p>
+            <br>
+            <p>Plutôt que de subir les contraintes des modèles d'abonnement SaaS, j'ai décidé de développer une
+                alternative <strong>open-source et auto-hébergée</strong> (self-hosted). L'objectif était de recréer un
+                système Kanban fluide, intégrant nativement la flexibilité des champs personnalisés pour s'adapter
+                précisément aux besoins complexes du développement de jeux.</p>
+
+            <h3 style="margin-top: 2rem; font-size: 1.5rem;">Points Clés :</h3>
+            <ul style="list-style: disc; margin-left: 20px; margin-top: 1rem; color: #ccc; line-height: 1.6;">
+                <li><strong>Gestion de Backlog Optimisée :</strong> Conçu spécifiquement pour répondre aux exigences de
+                    suivi des bugs et des tâches de production.</li>
+                <li><strong>Champs Personnalisés Natifs :</strong> Liberté totale sur les données rattachées aux tickets
+                    sans dépendre d'une version premium.</li>
+                <li><strong>Confidentialité & Contrôle :</strong> Solution self-hosted garantissant que les données du
+                    projet restent sur les serveurs de l'équipe.</li>
+                <li><strong>Interface Intuitive :</strong> Une UX pensée pour la rapidité d'exécution et la clarté
+                    visuelle.</li>
+            </ul>
+        </div>
+
+        <div class="glass-card hidden-reveal" style="margin-top: 2rem;">
+            <h2>Ressources du Projet</h2>
+            <p>Accédez au code source et découvrez l'outil en action.</p>
+            <div class="project-meta" style="margin-top: 1.5rem; gap: 1.5rem;">
+                <div class="meta-item">
+                    <span class="material-symbols-rounded" style="color: var(--highlight-color);">rocket_launch</span>
+                    <a href="https://online-kanban.vercel.app/" target="_blank" class="contact-link">Voir la Démo en
+                        Ligne</a>
+                </div>
+                <div class="meta-item">
+                    <span class="material-symbols-rounded" style="color: #fff;">code</span>
+                    <a href="https://github.com/NoaSecond/Ananke" target="_blank" class="contact-link">Code Source
+                        (GitHub)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-card hidden-reveal" style="margin-top: 2rem;">
+            <h2>Galerie du Projet</h2>
+            <p>Aperçu de l'interface d'Ananke et de ses fonctionnalités de gestion.</p>
+            <div class="project-gallery">
+                <div class="gallery-item">
+                    <img src="../assets/gallery/ananke/Ananke_1.jpg" alt="Ananke Dashboard" loading="lazy"
+                        decoding="async">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/gallery/ananke/Ananke_2.jpg" alt="Ananke Task View" loading="lazy"
+                        decoding="async">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/gallery/ananke/Ananke_3.jpg" alt="Ananke Settings" loading="lazy"
+                        decoding="async">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/gallery/ananke/Ananke%20Logo.png" alt="Ananke Logo" loading="lazy"
+                        decoding="async">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; color: #666; font-size: 0.9rem;">
+        <p>&copy; 2026 Noa Second. Tous droits réservés.</p>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/dynamicTitle.js"></script>
+    <script>
+        document.getElementById('project-scroll-btn').addEventListener('click', () => {
+            document.getElementById('project-details').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overscoped | Noa Second</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/projects/project-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/favicon/site.webmanifest">
+</head>
+
+<body>
+
+    <a href="../index.html" class="back-btn">
+        <span class="material-symbols-rounded">arrow_back</span> Retour
+    </a>
+
+    <header class="project-hero">
+        <div class="hero-bg"
+            style="background: linear-gradient(rgba(5, 5, 16, 0.4), rgba(5, 5, 16, 0.9)), url('../assets/img/banners/overscoped-banner.jpg') no-repeat center center/cover;"
+            fetchpriority="high">
+        </div>
+        <div class="container hero-content">
+            <h1>Overscoped</h1>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="material-symbols-rounded" style="color: var(--highlight-color);">person</span>
+                    <span>GD & Développeur</span>
+                </div>
+                <div class="meta-item">
+                    <span class="material-symbols-rounded">settings</span>
+                    <span>Unreal Engine 5.4.4</span>
+                </div>
+                <div class="meta-item">
+                    <span class="material-symbols-rounded">groups</span>
+                    <span>Projet Scolaire (Équipe de 4)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-down" id="project-scroll-btn">
+            <span class="material-symbols-rounded" style="font-size: 40px;">keyboard_arrow_down</span>
+        </div>
+    </header>
+
+    <main id="project-details" class="container" style="padding: 4rem 20px;">
+        <div class="glass-card hidden-reveal">
+            <h2>Vision du Projet</h2>
+            <p><strong>Overscoped</strong> tire son nom d'une ambition délibérément démesurée. Alors que les consignes
+                scolaires se limitaient à une simple initiation à Unreal Engine (lumières, sons, assets de base), j'ai
+                choisi, avec un autre membre de l'équipe maîtrisant également le moteur, de "sortir le grand jeu" et de
+                transformer cet exercice en un véritable terrain d'expérimentation technique.</p>
+            <br>
+            <p>Mon objectif était de repousser les limites du moteur pour créer un Third Person Shooter (TPS) complexe
+                en seulement quelques jours. Le résultat intègre des <strong>planètes sphériques en voxel</strong>, une
+                gravité personnalisée développée en C++, et une modification profonde de plugins, prouvant qu'un simple
+                exercice peut devenir un prototype technique robuste sous l'impulsion d'une vision ambitieuse.</p>
+        </div>
+
+        <div class="glass-card hidden-reveal" style="margin-top: 2rem;">
+            <h2>Défis Techniques & Innovation</h2>
+            <ul style="list-style: disc; margin-left: 20px; margin-top: 1rem; color: #ccc; line-height: 1.6;">
+                <li><strong>Planètes Sphériques Voxel :</strong> Utilisation de paysages voxel sculptables à 360°,
+                    convertis via un système de <i>baking</i> personnalisé pour permettre la navigation des IA et le
+                    placement du foliage.</li>
+                <li><strong>Gravité Directionnelle :</strong> Développement d'un Player Controller spécifique en C++
+                    permettant d'orienter la gravité dynamiquement vers le centre des planètes, incluant la gestion de
+                    l'apesanteur et des priorités de champs.</li>
+                <li><strong>IA & Navigation 3D :</strong> Adaptation du plugin 3DNavMesh pour permettre aux ennemis de
+                    se déplacer sur des surfaces courbes et complexes.</li>
+                <li><strong>Gestion Collaborative :</strong> Utilisation d'un serveur <strong>Perforce</strong>
+                    auto-hébergé pour pallier les limitations de stockage de GitHub LFS, assurant un versionnage robuste
+                    d'assets volumineux.</li>
+            </ul>
+        </div>
+
+        <div class="glass-card hidden-reveal" style="margin-top: 2rem;">
+            <h2>Ressources du Projet</h2>
+            <div class="project-meta" style="margin-top: 1rem; gap: 1.5rem;">
+                <div class="meta-item">
+                    <span class="material-symbols-rounded" style="color: var(--highlight-color);">download</span>
+                    <span style="color: #ccc;">Build bientôt disponible</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-card hidden-reveal" style="margin-top: 2rem;">
+            <h2>Galerie du Projet</h2>
+            <p>Aperçu des environnements planétaires et du rendu in-game.</p>
+            <div class="project-gallery">
+                <div class="gallery-item">
+                    <img src="../assets/gallery/overscoped/Overscoped%20InGame.jpg" alt="Overscoped InGame Action"
+                        loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/gallery/overscoped/Overscoped%203%20Planets.jpg" alt="Vue des 3 planètes"
+                        loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/gallery/overscoped/Overscoped%20Planet%20A.jpg" alt="Planète A - Jungle"
+                        loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/gallery/overscoped/Overscoped%20Planet%20B.jpg" alt="Planète B - Désert"
+                        loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/gallery/overscoped/Overscoped%20Planet%20C.jpg" alt="Planète C - Glace"
+                        loading="lazy" decoding="async">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; color: #666; font-size: 0.9rem;">
+        <p>&copy; 2026 Noa Second. Tous droits réservés.</p>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/dynamicTitle.js"></script>
+    <script>
+        document.getElementById('project-scroll-btn').addEventListener('click', () => {
+            document.getElementById('project-details').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>

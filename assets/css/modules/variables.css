@@ -1,0 +1,34 @@
+/* =========================================
+   VARIABLES
+   ========================================= */
+:root {
+    /* Palette Dark Premium */
+    --bg-color: #050510;
+    /* Noir bleuté profond */
+    --text-color: #e0e0e0;
+    /* Blanc cassé pour la lecture */
+    --heading-color: #ffffff;
+    /* Blanc pur pour les titres */
+
+    /* Accents */
+    --primary-color: #7b2cbf;
+    /* Violet profond */
+    --secondary-color: #9d4edd;
+    /* Violet vibrant */
+    --accent-color: #e0aaff;
+    /* Lilas lumineux */
+    --highlight-color: #00f5d4;
+    /* Cyan néon pour le contraste */
+
+    /* Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-blur: 10px;
+
+    /* Fonts */
+    --font-main: 'Open Sans', sans-serif;
+
+    /* Spacing */
+    --container-width: 1200px;
+    --section-padding: 80px 20px;
+}

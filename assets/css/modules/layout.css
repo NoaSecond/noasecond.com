@@ -1,0 +1,108 @@
+/* =========================================
+   LAYOUT & SECTIONS
+   ========================================= */
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: var(--section-padding);
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Hero */
+#hero {
+    text-align: center;
+    align-items: center;
+    /* Background removed to seamlessly blend with global background/parallax */
+}
+
+.hero-content h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+.hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 3rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+/* Projects Grid */
+#projects {
+    align-items: center;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 3rem;
+    width: 100%;
+}
+
+/* Profile Grid */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-top: 3rem;
+}
+
+.cert-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: var(--glass-bg);
+    border: 1px solid transparent;
+    /* Prepare for border transition */
+    border-radius: 12px;
+    text-decoration: none;
+    /* Ensure no underline for link */
+    color: inherit;
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.cert-item:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent-color);
+}
+
+.interests-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-actions {
+        width: 100%;
+    }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaCorbeille STUDIO | Noa Second</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/projects/project-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/favicon/site.webmanifest">
+</head>
+
+<body>
+
+    <a href="../index.html" class="back-btn">
+        <span class="material-symbols-rounded">arrow_back</span> Retour
+    </a>
+
+    <header class="project-hero">
+        <div class="hero-bg"
+            style="background: linear-gradient(rgba(5, 5, 16, 0.2), rgba(5, 5, 16, 0.8)), url('../assets/img/banners/lacorbeille-banner.jpg') no-repeat center 30%/cover;">
+        </div>
+        <div class="container hero-content">
+            <h1>LaCorbeille STUDIO</h1>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="material-symbols-rounded">person</span>
+                    <span>Directeur Créatif & Lead Game Designer</span>
+                </div>
+                <div class="meta-item">
+                    <span class="material-symbols-rounded">calendar_today</span>
+                    <span>2024 - Présent</span>
+                </div>
+                <div class="meta-item">
+                    <span class="material-symbols-rounded">language</span>
+                    <a href="https://lacorbeille.studio" target="_blank" class="contact-link"
+                        style="color: var(--highlight-color);">lacorbeille.studio</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll invitation -->
+        <div class="scroll-down" id="project-scroll-btn">
+            <span class="material-symbols-rounded" style="font-size: 40px;">keyboard_arrow_down</span>
+        </div>
+    </header>
+
+    <main id="project-details" class="container" style="padding: 4rem 20px;">
+        <div class="glass-card hidden-reveal">
+            <h2>À propos du projet</h2>
+            <p><strong>LaCorbeille STUDIO</strong> est un studio de jeux vidéo indépendant que j'ai fondé. Mon rôle
+                central en tant que Fondateur, Directeur Créatif et Lead Game Designer m'a permis de superviser
+                l'ensemble de
+                la chaîne de production.</p>
+            <br>
+            <p>Nos productions se concentrent sur des expériences innovantes pour lesquels j'utilise l'Unreal Engine 4
+                ou 5.
+                La taille de l'équipe varie en fonction des projets mais nous sommes en moyenne moins de 10.
+                En tant que directeur, j'ai mis en place les pipelines de production, géré l'équipe technique et assuré
+                la cohérence artistique globale.</p>
+
+            <h3 style="margin-top: 2rem; font-size: 1.5rem;">Responsabilités Clés :</h3>
+            <ul style="list-style: disc; margin-left: 20px; margin-top: 1rem; color: #ccc;">
+                <li>Direction de la vision créative et artistique.</li>
+                <li>Game design et level design.</li>
+                <li>Développement de mécaniques de gameplay en Blueprints.</li>
+                <li>Management d'une équipe multidisciplinaire.</li>
+            </ul>
+        </div>
+
+        <div class="glass-card hidden-reveal" style="margin-top: 2rem;">
+            <h2>Réseaux du Studio</h2>
+            <div class="project-meta" style="margin-top: 1.5rem; gap: 1.5rem;">
+                <div class="meta-item">
+                    <span class="material-symbols-rounded">mail</span>
+                    <a href="mailto:contact@lacorbeille.studio" class="contact-link">contact@lacorbeille.studio</a>
+                </div>
+                <div class="meta-item">
+                    <img src="../assets/icons/LinkedIn.svg" alt="LinkedIn" class="icon-linkedin">
+                    <a href="https://www.linkedin.com/company/lacorbeille-studio" target="_blank"
+                        class="contact-link">LinkedIn</a>
+                </div>
+                <div class="meta-item">
+                    <img src="../assets/icons/Instagram.svg" alt="Instagram" class="icon-instagram">
+                    <a href="https://www.instagram.com/lacorbeille.studio" target="_blank"
+                        class="contact-link">Instagram</a>
+                </div>
+                <div class="meta-item">
+                    <img src="../assets/icons/Gamearly.svg" alt="Gamearly" class="icon-gamearly">
+                    <a href="https://app.gamearly.com/studios/164/overview" target="_blank"
+                        class="contact-link">Gamearly</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; color: #666; font-size: 0.9rem;">
+        <p>&copy; 2026 Noa Second. Tous droits réservés.</p>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/dynamicTitle.js"></script>
+    <script>
+        // Project specific scroll
+        document.getElementById('project-scroll-btn').addEventListener('click', () => {
+            document.getElementById('project-details').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>

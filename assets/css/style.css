@@ -1,0 +1,15 @@
+/* =========================================
+   MAIN STYLESHEET
+   -----------------------------------------
+   Imports all modules to create the final CSS.
+   ========================================= */
+
+@import 'modules/variables.css';
+@import 'modules/base.css';
+@import 'modules/typography.css';
+@import 'modules/components.css';
+@import 'modules/navigation.css';
+@import 'modules/cursor.css';
+@import 'modules/parallax.css';
+@import 'modules/layout.css';
+@import 'modules/animations.css';

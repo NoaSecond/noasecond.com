@@ -1,0 +1,45 @@
+/* Cursor Elements */
+.cursor-dot,
+.cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+    /* Click pass-through */
+    opacity: 0;
+    /* Hide initially to avoid top-left flicker on load */
+    transition: opacity 0.3s ease;
+}
+
+body.cursor-visible .cursor-dot,
+body.cursor-visible .cursor-outline {
+    opacity: 1;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--highlight-color);
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--accent-color);
+    transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
+    /* Smooth visual changes */
+}
+
+/* Hover state for links (Shrink and focus) */
+body.hovering .cursor-outline {
+    width: 20px;
+    /* Shrinks to focus */
+    height: 20px;
+    background-color: rgba(0, 245, 212, 0.2);
+    /* Slight tint */
+    border-color: var(--highlight-color);
+    /* Bright border */
+}

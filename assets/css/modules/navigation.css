@@ -1,0 +1,164 @@
+/* =========================================
+   FLOATING NAVIGATION & SOCIALS
+   ========================================= */
+
+/* --- MAIN NAV (CENTER) --- */
+.floating-nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+
+    /* Strong Glassmorphism matching cards */
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    /* Slightly stronger blur for nav */
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+    padding: 10px 40px;
+    border-radius: 50px;
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.floating-nav:hover {
+    border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.floating-nav ul {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 100%;
+    height: 2px;
+    background: var(--highlight-color);
+    transition: transform 0.3s ease;
+    border-radius: 2px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    opacity: 1;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 245, 212, 0.5);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* --- SOCIAL SIDEBAR (TOP LEFT) --- */
+/* --- SOCIAL SIDEBAR (TOP LEFT) --- */
+.floating-socials {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    /* Glassmorphism */
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    padding: 15px 10px;
+    border-radius: 50px;
+    /* Pill shape vertical */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+    /* Animation state: Hidden by default */
+    opacity: 0;
+    transform: translateX(-50px);
+    pointer-events: none;
+    /* Prevent clicks when hidden */
+    transition: transform 0.4s ease, opacity 0.4s ease, border-color 0.3s ease;
+}
+
+.floating-socials.visible {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.floating-socials:hover {
+    border-color: var(--accent-color);
+}
+
+/* Mini social icons specific to this bar */
+.social-icon.mini {
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.social-icon.mini img {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    /* Maximum visibility */
+}
+
+.social-icon.mini:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Hide top-left socials on mobile to save space */
+@media (max-width: 1024px) {
+    .floating-socials {
+        display: none;
+    }
+}
+
+/* Mobile Responsive Main Nav */
+@media (max-width: 768px) {
+    .floating-nav {
+        top: auto;
+        bottom: 20px;
+        /* Move to bottom on mobile */
+        padding: 12px 30px;
+        width: 85%;
+        justify-content: center;
+        display: flex;
+        background: rgba(5, 5, 16, 0.85);
+        /* Darker on mobile for better contrast over content */
+        backdrop-filter: blur(20px);
+    }
+
+    .floating-nav ul {
+        gap: 0;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .nav-link {
+        font-size: 0.75rem;
+    }
+}

@@ -1,0 +1,171 @@
+/* =========================================
+   PROJECT DETAIL STYLES
+   -----------------------------------------
+   Common styles for all project detail pages.
+   ========================================= */
+
+/* Hero Section */
+.project-hero {
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 12rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Smooth Transition Gradient at bottom of hero */
+.project-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20vh;
+    background: linear-gradient(to bottom, transparent, var(--bg-color, #050510));
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    /* No blur filter for performance - applied directly to images */
+    z-index: -1;
+    will-change: transform;
+}
+
+/* Page Content Section */
+#project-details {
+    position: relative;
+    z-index: 10;
+    background: var(--bg-color, #050510);
+    margin-top: -5vh;
+    /* Overlap to hide seam */
+    border-radius: 40px 40px 0 0;
+    padding: 4rem 2rem !important;
+    box-shadow: 0 -40px 60px 10px rgba(5, 5, 16, 0.98);
+}
+
+/* Project Meta Info */
+.project-meta {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent-color);
+}
+
+.meta-item img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+/* Brand Colors via Filters (Specific to social links) */
+.meta-item:hover .icon-linkedin {
+    filter: invert(31%) sepia(99%) saturate(1034%) hue-rotate(173deg) brightness(91%) contrast(101%) drop-shadow(0 0 5px #0077b5);
+    opacity: 1;
+}
+
+.meta-item:hover .icon-instagram {
+    filter: invert(35%) sepia(87%) saturate(2331%) hue-rotate(326deg) brightness(93%) contrast(92%) drop-shadow(0 0 5px #e4405f);
+    opacity: 1;
+}
+
+.meta-item:hover .icon-gamearly {
+    filter: invert(75%) sepia(74%) saturate(760%) hue-rotate(352deg) brightness(101%) contrast(91%) drop-shadow(0 0 5px #f3ba2f);
+    opacity: 1;
+}
+
+/* Back Button */
+.back-btn {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    border: 1px solid var(--glass-border);
+    z-index: 100;
+    transition: all 0.3s ease;
+    color: white;
+    text-decoration: none;
+}
+
+.back-btn:hover {
+    background: var(--accent-color);
+    border-color: var(--highlight-color);
+    transform: translateX(-5px);
+    box-shadow: 0 0 20px rgba(0, 245, 212, 0.3);
+}
+
+/* Scroll Arrow Adjustment for Projects */
+.scroll-down {
+    bottom: 2rem !important;
+}
+
+/* Gallery Styles */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    aspect-ratio: 16 / 9;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover {
+    border-color: var(--highlight-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-item:hover img,
+.gallery-item:hover video {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+}

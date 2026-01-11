@@ -1,0 +1,49 @@
+/* =========================================
+   PARALLAX BACKGROUND
+   ========================================= */
+.parallax-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    /* Behind everything */
+    pointer-events: none;
+}
+
+.parallax-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    /* Very strong blur for dreamy effect */
+    opacity: 0.3;
+    will-change: transform;
+}
+
+.shape-1 {
+    width: 600px;
+    height: 600px;
+    background: var(--primary-color);
+    top: -200px;
+    left: -100px;
+}
+
+.shape-2 {
+    width: 500px;
+    height: 500px;
+    background: var(--secondary-color);
+    bottom: -100px;
+    right: -100px;
+}
+
+.shape-3 {
+    width: 300px;
+    height: 300px;
+    background: var(--highlight-color);
+    top: 30%;
+    left: 40%;
+    opacity: 0.15;
+    /* Sbtle highlight in the middle */
+}

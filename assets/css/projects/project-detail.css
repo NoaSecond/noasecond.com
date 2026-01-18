@@ -114,10 +114,12 @@
 }
 
 .back-btn:hover {
-    background: var(--accent-color);
-    border-color: var(--highlight-color);
+    background: #ffffff;
+    border-color: #ffffff;
+    color: var(--bg-color);
+    /* To keep it readable */
     transform: translateX(-5px);
-    box-shadow: 0 0 20px rgba(0, 245, 212, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 /* Scroll Arrow Adjustment for Projects */

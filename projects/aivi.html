@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI.VI | Développement Multijoueur Coopératif — Stage Out of Time</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/projects/project-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+    <meta name="description"
+        content="AI.VI — Stage chez Out of Time : refonte architecturale complète d'un FPS/Tower Defense commercial pour y intégrer un mode coopératif en ligne. Blueprint UE5, réplication réseau, Online Subsystem Steam, plugins C++ publiés sur FAB. Par Noa Second.">
+    <meta property="og:title" content="AI.VI | Stage Out of Time — Développement Multijoueur UE5">
+    <meta property="og:description"
+        content="Stage de 4 mois chez Out of Time : refonte architecturale d'un jeu commercial, implémentation du multijoueur coopératif avec Online Subsystem Steam.">
+    <meta property="og:image" content="https://noasecond.com/assets/img/banners/aivi-banner.jpg">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://noasecond.com/projects/aivi.html">
+    <link rel="manifest" href="../assets/favicon/site.webmanifest">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "AI.VI",
+      "headline": "Développement d'un mode multijoueur coopératif sur un jeu vidéo commercialisé — Stage Out of Time",
+      "description": "Stage de 4 mois chez Out of Time : audit technique, refactoring, réplication réseau UE5, Online Subsystem Steam et publication de plugins C++ sur FAB.",
+      "author": { "@type": "Person", "name": "Noa Second" },
+      "url": "https://store.steampowered.com/app/2892380/AIVI/",
+      "keywords": "AI.VI, Out of Time, Steam, Unreal Engine 5, Blueprint, C++, Multijoueur, Réplication réseau, Online Subsystem Steam, FAB"
+    }
+    </script>
+
+    <style>
+        .mission-phase {
+            border-left: 3px solid var(--primary-color);
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .mission-phase h3 {
+            font-size: 1.15rem;
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+        }
+        .mission-phase ul {
+            list-style: disc;
+            margin-left: 1.2rem;
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+        .tech-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: rgba(255, 70, 150, 0.1);
+            border: 1px solid rgba(255, 70, 150, 0.25);
+            color: var(--accent-color);
+            font-size: 0.8rem;
+            margin: 3px;
+            font-weight: 600;
+        }
+        .plugin-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 1.2rem 1.4rem;
+            margin-bottom: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .plugin-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 20px rgba(255, 70, 150, 0.1);
+        }
+        .plugin-card h4 {
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+        }
+        .plugin-card p {
+            color: var(--text-color);
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+        .result-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 1rem 1.4rem;
+            background: rgba(255, 70, 150, 0.07);
+            border: 1px solid rgba(255, 70, 150, 0.2);
+            border-radius: 14px;
+            margin-bottom: 0.75rem;
+        }
+        .result-badge .badge-icon {
+            font-size: 1.8rem;
+            min-width: 2rem;
+            text-align: center;
+        }
+        .result-badge strong { display: block; color: white; font-size: 0.95rem; }
+        .result-badge span { color: var(--violet-soft); font-size: 0.85rem; }
+    </style>
+</head>
+
+<body>
+    <!-- STARS BACKGROUND -->
+    <div class="stars-container">
+        <div class="star-layer star-layer-1"></div>
+        <div class="star-layer star-layer-2"></div>
+        <div class="star-layer star-layer-3"></div>
+    </div>
+
+    <!-- PARALLAX BG -->
+    <div class="parallax-wrapper">
+        <div class="parallax-shape shape-1"></div>
+        <div class="parallax-shape shape-2"></div>
+        <div class="parallax-shape shape-3"></div>
+    </div>
+
+    <a href="../index.html" class="back-btn" id="back-home">
+        <span class="material-symbols-rounded">arrow_back</span> Retour
+    </a>
+
+    <header class="project-hero" style="position:relative; overflow:hidden;">
+        <!-- Vidéo bandeau plein écran -->
+        <video
+            autoplay loop muted playsinline
+            poster="../assets/img/banners/aivi-banner.jpg"
+            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0;">
+            <source src="../assets/gallery/aivi/AI_VI_trailer.mp4" type="video/mp4">
+        </video>
+        <!-- Overlay NightViolet pour lisibilité -->
+        <div style="position:absolute; inset:0; background: linear-gradient(to bottom, rgba(30,16,51,0.25) 0%, rgba(18,9,32,0.88) 100%); z-index:1;"></div>
+        <div class="container hero-content" style="position:relative; z-index:2;">
+            <h1>AI.VI</h1>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="material-symbols-rounded" style="color: var(--primary-color);">business</span>
+                    <span>Out of Time Studio — Cannes</span>
+                </div>
+                <div class="meta-item">
+                    <span class="material-symbols-rounded" style="color: var(--primary-color);">work</span>
+                    <span>Stage — 4 mois</span>
+                </div>
+                <div class="meta-item">
+                    <span class="material-symbols-rounded" style="color: var(--primary-color);">settings</span>
+                    <span>Unreal Engine 5 — Blueprint &amp; C++</span>
+                </div>
+                <div class="meta-item">
+                    <span class="material-symbols-rounded" style="color: var(--primary-color);">videogame_asset</span>
+                    <span>Jeu commercial publié sur Steam</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down" id="project-scroll-btn" style="position:relative; z-index:2;">
+            <span class="material-symbols-rounded" style="font-size: 40px;">keyboard_arrow_down</span>
+        </div>
+    </header>
+
+    <main id="project-details" class="container">
+
+        <!-- Le jeu -->
+        <div class="glass-card hidden-reveal">
+            <h2>Le Jeu</h2>
+            <p style="margin-bottom: 1rem; line-height: 1.8;">
+                <strong>AI.VI</strong> est un hybride <strong>FPS × Tower Defense</strong> au sein d'un univers western futuriste, développé par le studio indépendant <strong>Out of Time</strong> et sorti commercialement le <strong>18 mars 2026 sur Steam</strong> (Windows / Mac). Le jeu reçoit <strong>100&nbsp;% d'avis positifs</strong> à son lancement.
+            </p>
+            <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                La boucle de jeu alterne des phases de <strong>Tower Defense</strong> (placement stratégique de pièges entre les vagues) et des phases d'<strong>action FPS</strong>, avec un système de <strong>combos élémentaires</strong> (inspiré de Genshin Impact) et une dimension <strong>roguelite</strong> : chaque montée de niveau offre des bonus aléatoires garantissant la rejouabilité.
+            </p>
+            <div>
+                <span class="tech-tag">FPS</span>
+                <span class="tech-tag">Tower Defense</span>
+                <span class="tech-tag">Roguelite</span>
+                <span class="tech-tag">Combos Élémentaires</span>
+                <span class="tech-tag">Steam (Windows / Mac)</span>
+                <span class="tech-tag">Unreal Engine 5</span>
+            </div>
+        </div>
+
+        <!-- Ma mission -->
+        <div class="glass-card hidden-reveal" style="margin-top: 2rem;">
+            <h2>Ma Mission — Développeur Réseau UE5</h2>
+            <p style="margin-bottom: 1.5rem; color: var(--violet-soft);">
+                Le studio avait identifié un levier commercial critique : passer d'une expérience purement solo à un <strong>mode coopératif en ligne à 2 joueurs</strong> pour relancer la visibilité du titre sur Steam. Ma mission : opérer cette refonte architecturale complète, estimée à 4 mois par le studio — <strong>atteinte à 80 % avant la fin du 2ème mois.</strong>
+            </p>
+
+            <div class="mission-phase">
+                <h3>Phase 1 — Audit Technique &amp; Optimisation</h3>
+                <ul>
+                    <li><strong>Profilage GPU/CPU</strong> avec les outils UE5 (<code>stat GPU</code>, Shader Complexity, Visibility Collision) pour identifier précisément les goulots d'étranglement.</li>
+                    <li><strong>Optimisation des collisions</strong> : suppression des masques complexes superflus sur les éléments hors champ, passage à des géométries simplifiées.</li>
+                    <li><strong>Optimisation du rendu</strong> : passage aux Instanced Static Meshes (réduction des draw calls), désactivation des canaux alpha superflus, configuration de Virtual Textures pour décharger la VRAM.</li>
+                    <li><strong>Refactoring de l'architecture logicielle</strong> : suppression de la logique tick-based sur les UI (property bindings), migration vers une architecture <strong>Event-Driven</strong>. Nettoyage de plusieurs gigaoctets, compression Oodle.</li>
+                </ul>
+            </div>
+
+            <div class="mission-phase">
+                <h3>Phase 2 — Refonte de l'Architecture Réseau</h3>
+                <ul>
+                    <li><strong>Démantèlement de la structure monolithique</strong> : le projet d'origine centralisait toute la logique dans le GameMode et la GameInstance — incompatible avec le réseau. Redistribution vers GameState, PlayerController et PlayerState.</li>
+                    <li><strong>GameState répliqué</strong> : supervision du cycle de vie des vagues, minuteurs, état de préparation des joueurs, fins de partie, réactions élémentaires — avec événements Multicast vers tous les clients.</li>
+                    <li><strong>PlayerController &amp; PlayerState</strong> : isolation des données par joueur (XP, ressources, bonus roguelite, état de validation), gestion des déconnexions et reconnexions en cours de partie.</li>
+                    <li><strong>Réplication des variables</strong> : arbitrage rigoureux Reliable/Unreliable (UDP) selon la criticité des données. RepNotify pour découpler la logique serveur des représentations visuelles locales.</li>
+                    <li><strong>Pipeline RPC</strong> : securisation des actions via Run on Server → validation serveur → Multicast (Niagara, SFX) → Run on Owning Client (feedback UI). Empêche toute modification directe de l'état du monde côté client.</li>
+                </ul>
+            </div>
+
+            <div class="mission-phase">
+                <h3>Phase 3 — Intégration Online Subsystem Steam</h3>
+                <ul>
+                    <li>Déploiement et configuration des plugins <strong>Advanced Sessions &amp; AdvancedSteamSessions</strong> + SteamSockets pour remplacer la connectivité réseau locale.</li>
+                    <li>Développement en <strong>C++</strong> de nœuds Blueprint spécifiques pour l'interfaçage Steam.</li>
+                    <li>UI de gestion des sessions : hébergement de lobbies publics sur les serveurs Steam, recherche et rejoindre de sessions.</li>
+                    <li><strong>Invitations directes</strong> via l'overlay Steam natif et rejoindre automatique via mécanisme de Rich Presence.</li>
+                </ul>
+            </div>
+
+            <div class="mission-phase">
+                <h3>Phase 4 — Outils C++ &amp; Contribution Communautaire</h3>
+                <ul>
+                    <li>Développement d'une suite d'outils C++ intégrés à l'éditeur UE5, publiés sur <strong>FAB (Epic Games Marketplace)</strong> et en open-source sur GitHub.</li>
+                    <li>Design web : conception de la maquette du nouveau site du studio sur Figma.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Plugins publiés sur FAB -->
+        <div class="glass-card hidden-reveal" style="margin-top: 2rem;">
+            <h2>Plugins UE5 Publiés sur FAB</h2>
+            <p style="color: var(--violet-soft); margin-bottom: 1.5rem;">Outils C++ développés durant le stage, packagés pour UE5.4+ et distribués à la communauté sur la marketplace Epic Games.</p>
+
+            <div class="plugin-card">
+                <h4>🌐 Network Mode Blueprints</h4>
+                <p>Expose le mode réseau actif (Standalone, Listen Server, Client, Dedicated Server) sous forme de nœuds Blueprint. Indispensable pour conditionner des fonctions selon le type de connexion lors du développement multijoueur.</p>
+            </div>
+            <div class="plugin-card">
+                <h4>⚙️ Blueprint Project Settings</h4>
+                <p>Permet de récupérer la version officielle du projet directement en Blueprint. Utilisé comme filtre de connexion Steam : si les versions divergent entre deux builds, l'accès à la session est bloqué pour éviter les incohérences.</p>
+            </div>
+            <div class="plugin-card">
+                <h4>🎨 Shared Folder Color</h4>
+                <p>Sérialise les préférences de coloration des dossiers UE dans un fichier <code>.json</code> partagé via Git. Garantit que toute l'équipe dispose automatiquement de la même charte visuelle de l'arborescence après synchronisation.</p>
+            </div>
+            <div class="plugin-card">
+                <h4>🔄 Restart Editor</h4>
+                <p>Ajoute un bouton macro dans la toolbar UE5 pour sauvegarder, fermer et relancer proprement l'éditeur en un clic. Indispensable lors des workflows C++ et de configurations réseau fréquentes.</p>
+            </div>
+        </div>
+
+        <!-- Résultats -->
+        <div class="glass-card hidden-reveal" style="margin-top: 2rem;">
+            <h2>Résultats &amp; Impact</h2>
+            <div style="margin-top: 1.5rem;">
+                <div class="result-badge">
+                    <span class="badge-icon">⚡</span>
+                    <div>
+                        <strong>Feature Complete multijoueur avant la fin du 2ème mois</strong>
+                        <span>Le studio estimait cette transition sur 4+ mois. Atteint à 80 % dès la fin du mois 2 grâce à la synergie en binôme.</span>
+                    </div>
+                </div>
+                <div class="result-badge">
+                    <span class="badge-icon">🔧</span>
+                    <div>
+                        <strong>Architecture réseau complète (GameState / PlayerController / PlayerState)</strong>
+                        <span>Refonte totale depuis un code monolithique incompatible réseau vers une infrastructure distribuée répliquée.</span>
+                    </div>
+                </div>
+                <div class="result-badge">
+                    <span class="badge-icon">🎮</span>
+                    <div>
+                        <strong>Online Subsystem Steam opérationnel</strong>
+                        <span>Lobbies publics, invitations directes, Rich Presence — le tout via les serveurs Steam.</span>
+                    </div>
+                </div>
+                <div class="result-badge">
+                    <span class="badge-icon">📦</span>
+                    <div>
+                        <strong>4 plugins C++ publiés sur FAB (UE5.4 → actuel)</strong>
+                        <span>Distribués open-source sur GitHub avec documentation technique complète.</span>
+                    </div>
+                </div>
+                <div class="result-badge">
+                    <span class="badge-icon">🌐</span>
+                    <div>
+                        <strong>Maquette du site Out of Time conçue sur Figma</strong>
+                        <span>Contribution transverse en design UI/UX pour le studio.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Liens -->
+        <div class="glass-card hidden-reveal" style="margin-top: 2rem;">
+            <h2>Ressources</h2>
+            <div class="project-meta" style="gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                <div class="meta-item">
+                    <span class="material-symbols-rounded" style="color: var(--primary-color);">videogame_asset</span>
+                    <a href="https://store.steampowered.com/app/2892380/AIVI/" target="_blank" class="contact-link" id="link-steam">
+                        Voir AI.VI sur Steam
+                    </a>
+                </div>
+                <div class="meta-item">
+                    <span class="material-symbols-rounded" style="color: var(--violet-soft);">open_in_new</span>
+                    <a href="https://outoftime.studio/" target="_blank" class="contact-link" id="link-studio">
+                        Site du Studio — Out of Time
+                    </a>
+                </div>
+                <div class="meta-item">
+                    <span class="material-symbols-rounded" style="color: #fbbc05;">description</span>
+                    <a href="https://drive.google.com/file/d/1izqVnyde-x1C6OBACyeJ6-Nj4FbLiFIC/view?usp=sharing" target="_blank" class="contact-link" id="link-rapport">
+                        Rapport de Stage (PDF)
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; color: var(--violet-soft); font-size: 0.9rem; border-top: 1px solid var(--glass-border);">
+        <p>&copy; 2026 Noa Second. Tous droits réservés.</p>
+    </footer>
+
+    <script src="../assets/js/cursor.js"></script>
+    <script src="../assets/js/animations.js"></script>
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/dynamicTitle.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

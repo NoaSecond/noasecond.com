@@ -54,7 +54,7 @@
     transform: translateX(-50%) scaleX(0);
     width: 100%;
     height: 2px;
-    background: var(--highlight-color);
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
     transition: transform 0.3s ease;
     border-radius: 2px;
 }
@@ -63,7 +63,7 @@
 .nav-link.active {
     opacity: 1;
     color: white;
-    text-shadow: 0 0 10px rgba(0, 245, 212, 0.5);
+    text-shadow: 0 0 12px rgba(255, 70, 150, 0.6);
 }
 
 .nav-link:hover::after,
@@ -147,8 +147,8 @@
         width: 85%;
         justify-content: center;
         display: flex;
-        background: rgba(5, 5, 16, 0.85);
-        /* Darker on mobile for better contrast over content */
+        background: rgba(30, 16, 51, 0.92);
+        /* NightViolet sur mobile */
         backdrop-filter: blur(20px);
     }
 

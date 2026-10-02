@@ -1,53 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!-- Page d'accueil -->
     <url>
         <loc>https://noasecond.com/</loc>
-        <lastmod>2026-01-11</lastmod>
-        <changefreq>weekly</changefreq>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
-
-    <!-- Projets -->
     <url>
-        <loc>https://noasecond.com/projects/lacorbeille-studio.html</loc>
-        <lastmod>2026-01-11</lastmod>
+        <loc>https://noasecond.com/projects/laissez-nous-cuisiner.html</loc>
+        <lastmod>2026-10-02</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://noasecond.com/projects/le-lab.html</loc>
-        <lastmod>2026-01-11</lastmod>
+        <loc>https://noasecond.com/projects/aivi.html</loc>
+        <lastmod>2026-10-02</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://noasecond.com/projects/mindoor.html</loc>
-        <lastmod>2026-01-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://noasecond.com/projects/ananke.html</loc>
-        <lastmod>2026-01-11</lastmod>
+        <loc>https://noasecond.com/projects/overscoped.html</loc>
+        <lastmod>2026-10-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://noasecond.com/projects/inputmapper.html</loc>
-        <lastmod>2026-01-18</lastmod>
+        <lastmod>2026-10-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://noasecond.com/projects/skaterz.html</loc>
-        <lastmod>2026-01-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://noasecond.com/projects/overscoped.html</loc>
-        <lastmod>2026-01-11</lastmod>
+        <loc>https://noasecond.com/projects/le-lab.html</loc>
+        <lastmod>2026-10-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>

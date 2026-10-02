@@ -1,4 +1,4 @@
-/* Cursor Elements */
+/* Cursor Elements — Dragonfruit x NightViolet */
 .cursor-dot,
 .cursor-outline {
     position: fixed;
@@ -8,9 +8,7 @@
     border-radius: 50%;
     z-index: 9999;
     pointer-events: none;
-    /* Click pass-through */
     opacity: 0;
-    /* Hide initially to avoid top-left flicker on load */
     transition: opacity 0.5s ease-in-out;
 }
 
@@ -27,7 +25,7 @@ body.cursor-idle .cursor-outline {
 .cursor-dot {
     width: 8px;
     height: 8px;
-    background-color: var(--highlight-color);
+    background-color: var(--primary-color);
 }
 
 .cursor-outline {
@@ -35,24 +33,17 @@ body.cursor-idle .cursor-outline {
     height: 40px;
     border: 1px solid var(--accent-color);
     transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
-    /* Smooth visual changes */
 }
 
-/* Hover state for links (Shrink and focus) */
 body.hovering .cursor-outline {
     width: 20px;
-    /* Shrinks to focus */
     height: 20px;
-    background-color: rgba(0, 245, 212, 0.2);
-    /* Slight tint */
-    border-color: var(--highlight-color);
-    /* Bright border */
+    background-color: rgba(255, 70, 150, 0.2);
+    border-color: var(--primary-color);
 }
 
-/* Hide on Mobile/Touch devices */
 @media (max-width: 1024px),
 (pointer: coarse) {
-
     .cursor-dot,
     .cursor-outline {
         display: none !important;

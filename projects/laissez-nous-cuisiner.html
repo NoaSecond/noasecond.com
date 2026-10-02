@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laissez-nous cuisiner ! | Projet Master 2 - FIJ Cannes</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/projects/project-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+    <meta name="description"
+        content="Laissez-nous cuisiner ! — Extraction Cooker présenté au Festival International de Jeux de Cannes. Co-direction d'une équipe de ~20 personnes sur Unreal Engine 5.7. Par Noa Second.">
+    <meta property="og:title" content="Laissez-nous cuisiner ! | FIJ Cannes - Noa Second">
+    <meta property="og:description"
+        content="Extraction Cooker solo, UE5.7. Présenté au FIJ de Cannes. Co-direction d'une équipe de ~20 personnes.">
+    <meta property="og:image" content="https://noasecond.com/assets/img/banners/lnc-banner.jpg">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://noasecond.com/projects/laissez-nous-cuisiner.html">
+    <link rel="manifest" href="../assets/favicon/site.webmanifest">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Laissez-nous cuisiner !",
+      "headline": "Extraction Cooker — Master 2 — Festival International de Jeux de Cannes",
+      "description": "Projet de Master 2 présenté au FIJ de Cannes. Extraction Cooker sur Unreal Engine 5.7, co-dirigé par Noa Second.",
+      "author": { "@type": "Person", "name": "Noa Second" },
+      "keywords": "Master 2, FIJ Cannes, Game Design, Direction Créative, Unreal Engine 5, Extraction Cooker"
+    }
+    </script>
+
+    <style>
+        /* Styles spécifiques à la page LNC */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .team-member {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .team-member:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 15px rgba(255, 70, 150, 0.1);
+        }
+        .team-member strong {
+            display: block;
+            color: white;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+        .team-member span {
+            font-size: 0.8rem;
+            color: var(--violet-soft);
+        }
+        .team-member.highlight {
+            border-color: rgba(255, 70, 150, 0.5);
+            background: rgba(255, 70, 150, 0.08);
+        }
+        .team-member.highlight strong {
+            color: var(--primary-color);
+        }
+        .gameplay-pillar {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.2rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            margin-bottom: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        .gameplay-pillar:hover { border-color: var(--primary-color); }
+        .gameplay-pillar .pillar-icon {
+            font-size: 2rem;
+            min-width: 2.5rem;
+            text-align: center;
+        }
+        .gameplay-pillar h4 { font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--primary-color); }
+        .gameplay-pillar p { font-size: 0.9rem; color: var(--text-color); line-height: 1.6; }
+        .char-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .char-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        .char-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 25px rgba(255, 70, 150, 0.15);
+        }
+        .char-card .char-name { font-size: 1.1rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
+        .char-card .char-basic { font-size: 0.82rem; color: var(--text-color); line-height: 1.5; margin-bottom: 0.5rem; }
+        .char-card .char-ability { font-size: 0.8rem; color: var(--accent-color); }
+        .info-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: rgba(255, 70, 150, 0.1);
+            border: 1px solid rgba(255, 70, 150, 0.25);
+            color: var(--accent-color);
+            font-size: 0.82rem;
+            margin: 4px 4px 4px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- STARS BACKGROUND -->
+    <div class="stars-container">
+        <div class="star-layer star-layer-1"></div>
+        <div class="star-layer star-layer-2"></div>
+        <div class="star-layer star-layer-3"></div>
+    </div>
+
+    <!-- PARALLAX BG -->
+    <div class="parallax-wrapper">
+        <div class="parallax-shape shape-1"></div>
+        <div class="parallax-shape shape-2"></div>
+        <div class="parallax-shape shape-3"></div>
+    </div>
+
+    <a href="../index.html" class="back-btn" id="back-home">
+        <span class="material-symbols-rounded">arrow_back</span> Retour
+    </a>
+
+    <header class="project-hero">
+        <div class="hero-bg"
+            style="background: linear-gradient(rgba(30, 16, 51, 0.3), rgba(18, 9, 32, 0.92)), url('../assets/img/banners/lnc-banner.jpg') no-repeat center center/cover;"
+            fetchpriority="high">
+        </div>
+        <div class="container hero-content">
+            <h1>Laissez-nous cuisiner !</h1>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="material-symbols-rounded" style="color: var(--primary-color);">groups</span>
+                    <span>Co-Directeur Créatif &amp; Lead GD — ~20 personnes</span>
+                </div>
+                <div class="meta-item">
+                    <span class="material-symbols-rounded" style="color: var(--primary-color);">school</span>
+                    <span>Projet Master 2</span>
+                </div>
+                <div class="meta-item">
+                    <span class="material-symbols-rounded" style="color: var(--primary-color);">trophy</span>
+                    <span>FIJ Cannes — Festival International de Jeux</span>
+                </div>
+                <div class="meta-item">
+                    <span class="material-symbols-rounded" style="color: var(--primary-color);">settings</span>
+                    <span>Unreal Engine 5.7</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down" id="project-scroll-btn">
+            <span class="material-symbols-rounded" style="font-size: 40px;">keyboard_arrow_down</span>
+        </div>
+    </header>
+
+    <main id="project-details" class="container">
+
+        <!-- Fiche signalétique -->
+        <div class="glass-card hidden-reveal">
+            <h2>Le Projet</h2>
+            <p style="margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.8;">
+                Dans un monde bouleversé par une catastrophe, l'écosystème entier s'est retourné. Face à des créatures
+                qui ont envahi la terre, un groupe d'artisans de bouche décide de prendre les armes pour survivre et
+                <strong>sauvegarder le patrimoine culinaire</strong>.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem;">
+                <span class="info-badge"><span class="material-symbols-rounded" style="font-size:1rem;">gamepad</span> Extraction Cooker — Solo</span>
+                <span class="info-badge"><span class="material-symbols-rounded" style="font-size:1rem;">person</span> Casual à Hardcore</span>
+                <span class="info-badge"><span class="material-symbols-rounded" style="font-size:1rem;">computer</span> PC Windows</span>
+                <span class="info-badge"><span class="material-symbols-rounded" style="font-size:1rem;">grade</span> PEGI 12+</span>
+                <span class="info-badge"><span class="material-symbols-rounded" style="font-size:1rem;">settings</span> Unreal Engine 5.7</span>
+            </div>
+        </div>
+
+        <!-- Mon rôle -->
+        <div class="glass-card hidden-reveal" style="margin-top: 2rem;">
+            <h2>Mon Rôle</h2>
+            <ul style="list-style: disc; margin-left: 20px; margin-top: 1rem; color: var(--text-color); line-height: 1.9;">
+                <li><strong>Co-Direction Créative :</strong> Avec Valentin Faguet (Game Director), je co-pilote la vision artistique et ludique du jeu. Arbitrage des décisions de design, cohérence de l'expérience joueur.</li>
+                <li><strong>Lead Game &amp; Tech Design :</strong> Conception du GDD, des mécaniques de gameplay, du core loop, des 3C et de l'ensemble des systèmes (combat, cuisine, progression).</li>
+                <li><strong>Management d'équipe :</strong> Coordination des ~20 membres — répartition des missions, gestion du backlog (Scrum / Poker Planning), sprints de 2 semaines.</li>
+                <li><strong>Production :</strong> Suivi du planning, respect des deadlines, workflow Perforce pour garantir la stabilité de la branche principale.</li>
+                <li><strong>Architecture Technique :</strong> Définition des conventions de nommage, normes d'importation, intégration de BFL_Diagnostic pour le debug.</li>
+            </ul>
+        </div>
+
+        <!-- Core Loop -->
+        <div class="glass-card hidden-reveal" style="margin-top: 2rem;">
+            <h2>Core Loop</h2>
+            <p style="margin-bottom: 1.5rem; color: var(--violet-soft);">La boucle de gameplay principale se divise en trois phases :</p>
+            <div class="gameplay-pillar">
+                <span class="pillar-icon">⚔️</span>
+                <div>
+                    <h4>Massacrer</h4>
+                    <p>Tuer des monstres en combat dans des biomes variés (Automne, Hiver, Printemps, Été) pour récolter ingrédients et recettes. Le choix du biome est stratégique — chaque zone abrite des espèces différentes avec des loots spécifiques.</p>
+                </div>
+            </div>
+            <div class="gameplay-pillar">
+                <span class="pillar-icon">🍳</span>
+                <div>
+                    <h4>Cuisiner</h4>
+                    <p>Transformer le butin en plats via des mini-jeux de cuisine : cuisson (gestion de température), découpe, mélange, étalage de pâte. Les recettes sont débloquées au fur et à mesure — chaque plat préparé offre des buffs uniques.</p>
+                </div>
+            </div>
+            <div class="gameplay-pillar">
+                <span class="pillar-icon">🍽️</span>
+                <div>
+                    <h4>Savourer</h4>
+                    <p>Consommer les plats préparés autour d'une table ronde avec l'équipe. Les buffs se dissipent à la fin du combat — obligatoire avant chaque expédition, avec un nombre limité de plats consommables par phase.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personnages -->
+        <div class="glass-card hidden-reveal" style="margin-top: 2rem;">
+            <h2>Les 6 Personnages</h2>
+            <p style="color: var(--violet-soft); margin-bottom: 0.5rem;">Les "Derniers Gardiens" — artisans de bouche aux movesets uniques.</p>
+            <div class="char-grid">
+                <div class="char-card">
+                    <div class="char-name">🍷 Sommelière</div>
+                    <div class="char-basic"><strong>Basique :</strong> Attaque à distance avec bouteille d'alcool — lente, zone, dévastatrice.</div>
+                    <div class="char-ability">⚡ <em>Balayage tire-bouchon</em> autour d'elle</div>
+                </div>
+                <div class="char-card">
+                    <div class="char-name">🔪 Boucher</div>
+                    <div class="char-basic"><strong>Basique :</strong> Corps à corps — taillades au couteau de boucher.</div>
+                    <div class="char-ability">⚡ <em>Double couteau</em> — demi-cercle de dégâts</div>
+                </div>
+                <div class="char-card">
+                    <div class="char-name">⚓ Poissonnier</div>
+                    <div class="char-basic"><strong>Basique :</strong> Semi-distance — ancre en dégâts de zone.</div>
+                    <div class="char-ability">⚡ <em>Harpon</em> en ligne droite, portée infinie</div>
+                </div>
+                <div class="char-card">
+                    <div class="char-name">🥖 Boulangère</div>
+                    <div class="char-basic"><strong>Basique :</strong> CaC ultra-rapide — style katana à la baguette.</div>
+                    <div class="char-ability">⚡ <em>3 baguettes</em> — téléportation d'exécution</div>
+                </div>
+                <div class="char-card">
+                    <div class="char-name">🧀 Fromager</div>
+                    <div class="char-basic"><strong>Basique :</strong> Distance — meules de fromage qui roulent.</div>
+                    <div class="char-ability">⚡ <em>3 zones de fromage</em> ralentissantes</div>
+                </div>
+                <div class="char-card">
+                    <div class="char-name">🥕 Maraîchère</div>
+                    <div class="char-basic"><strong>Basique :</strong> Distance — panier de fruits/légumes mono-cible.</div>
+                    <div class="char-ability">⚡ Attaques en <em>Dégâts sur la Durée</em></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ressources -->
+        <div class="glass-card hidden-reveal" style="margin-top: 2rem;">
+            <h2>Ressources du Projet</h2>
+            <div class="project-meta" style="gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                <div class="meta-item">
+                    <span class="material-symbols-rounded" style="color: #fbbc05;">description</span>
+                    <a href="https://drive.google.com/file/d/1UZkOCzGlcVUNFrwHr0xftFb5oFHySIMX/view?usp=sharing"
+                        target="_blank" class="contact-link" id="link-gdd">Consulter le GDD</a>
+                </div>
+                <div class="meta-item">
+                    <span class="material-symbols-rounded" style="color: var(--primary-color);">slideshow</span>
+                    <span style="color: var(--violet-soft);">Pitch — À venir</span>
+                </div>
+                <div class="meta-item">
+                    <span class="material-symbols-rounded" style="color: var(--primary-color);">download</span>
+                    <span style="color: var(--violet-soft);">Build — À venir</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Équipe -->
+        <div class="glass-card hidden-reveal" style="margin-top: 2rem;">
+            <h2>L'Équipe de Développement</h2>
+
+            <h3 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.1rem; color: var(--accent-color);">Direction &amp; Core Team</h3>
+            <div class="team-grid">
+                <div class="team-member highlight">
+                    <strong>Noa Second</strong>
+                    <span>Creative Director, Lead Game &amp; Tech Designer</span>
+                </div>
+                <div class="team-member">
+                    <strong>Valentin Faguet</strong>
+                    <span>Game Director, Producer</span>
+                </div>
+                <div class="team-member">
+                    <strong>Margaux Haddad</strong>
+                    <span>Art Director</span>
+                </div>
+                <div class="team-member">
+                    <strong>Romain Liebert</strong>
+                    <span>Lead 3D Artist</span>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.1rem; color: var(--accent-color);">Design, Programmation &amp; Art</h3>
+            <div class="team-grid">
+                <div class="team-member">
+                    <strong>Mahdi Mighri</strong>
+                    <span>Lead Narrative Designer</span>
+                </div>
+                <div class="team-member">
+                    <strong>Victor Vieux-Melchior</strong>
+                    <span>Gameplay &amp; Integration Developer</span>
+                </div>
+                <div class="team-member">
+                    <strong>Ninon Mouls</strong>
+                    <span>2D Artist</span>
+                </div>
+                <div class="team-member">
+                    <strong>Norine Rafin</strong>
+                    <span>2D Artist, UI/UX Designer, Rigger</span>
+                </div>
+                <div class="team-member">
+                    <strong>Matthieu Tissier</strong>
+                    <span>3D Artist</span>
+                </div>
+                <div class="team-member">
+                    <strong>Florent Moll</strong>
+                    <span>3D Artist</span>
+                </div>
+                <div class="team-member">
+                    <strong>Audran Demeyer Gramond</strong>
+                    <span>Developer</span>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.1rem; color: var(--accent-color);">Design Sonore</h3>
+            <div class="team-grid">
+                <div class="team-member">
+                    <strong>Javier Rincón</strong>
+                    <span>Composer</span>
+                </div>
+                <div class="team-member">
+                    <strong>Lucie Hauser</strong>
+                    <span>Sound Designer</span>
+                </div>
+                <div class="team-member">
+                    <strong>Paolo Lembo</strong>
+                    <span>Composer, Sound Designer</span>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.1rem; color: var(--accent-color);">Ressources Externes</h3>
+            <div class="team-grid">
+                <div class="team-member">
+                    <strong>Romain Varene-Rebuffat</strong>
+                    <span>QA Tester, Narrative Designer</span>
+                </div>
+                <div class="team-member">
+                    <strong>Antoine Rullier</strong>
+                    <span>Business &amp; Marketing Analyst</span>
+                </div>
+                <div class="team-member">
+                    <strong>Antoine Fasquel</strong>
+                    <span>Narrative Designer</span>
+                </div>
+                <div class="team-member">
+                    <strong>Raphaël Mabire</strong>
+                    <span>3D Artist</span>
+                </div>
+                <div class="team-member">
+                    <strong>Amélie Verde Ferreira</strong>
+                    <span>2D Artist</span>
+                </div>
+                <div class="team-member">
+                    <strong>Riccardo Maggiorino Veglio</strong>
+                    <span>3D Artist</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Galerie -->
+        <div class="glass-card hidden-reveal" style="margin-top: 2rem;">
+            <h2>Galerie du Projet</h2>
+            <p style="color: var(--violet-soft);">Visuels et médias — bientôt disponibles.</p>
+            <div class="project-gallery" style="margin-top: 1.5rem;">
+                <div class="gallery-item" style="display:flex; align-items:center; justify-content:center; background: var(--glass-bg); border: 1px dashed var(--glass-border);">
+                    <span class="material-symbols-rounded" style="font-size:3rem; color: var(--glass-border);">image</span>
+                </div>
+                <div class="gallery-item" style="display:flex; align-items:center; justify-content:center; background: var(--glass-bg); border: 1px dashed var(--glass-border);">
+                    <span class="material-symbols-rounded" style="font-size:3rem; color: var(--glass-border);">image</span>
+                </div>
+                <div class="gallery-item" style="display:flex; align-items:center; justify-content:center; background: var(--glass-bg); border: 1px dashed var(--glass-border);">
+                    <span class="material-symbols-rounded" style="font-size:3rem; color: var(--glass-border);">image</span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; color: var(--violet-soft); font-size: 0.9rem; border-top: 1px solid var(--glass-border);">
+        <p>&copy; 2026 Noa Second. Tous droits réservés.</p>
+    </footer>
+
+    <script src="../assets/js/cursor.js"></script>
+    <script src="../assets/js/animations.js"></script>
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/dynamicTitle.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

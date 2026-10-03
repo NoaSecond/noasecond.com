@@ -1,32 +1,38 @@
 /* =========================================
-   VARIABLES
+   VARIABLES — Dragonfruit × NightViolet
    ========================================= */
 :root {
-    /* Palette Dark Premium */
-    --bg-color: #050510;
-    /* Noir bleuté profond */
-    --text-color: #e0e0e0;
-    /* Blanc cassé pour la lecture */
+    /* Background */
+    --bg-color: #1E1033;
+    /* NightViolet profond */
+    --bg-deep: #120920;
+    /* Fond encore plus sombre */
+    --text-color: #e8d8f0;
+    /* Blanc légèrement violacé pour la lecture */
     --heading-color: #ffffff;
     /* Blanc pur pour les titres */
 
-    /* Accents */
-    --primary-color: #7b2cbf;
-    /* Violet profond */
-    --secondary-color: #9d4edd;
-    /* Violet vibrant */
-    --accent-color: #e0aaff;
-    /* Lilas lumineux */
-    --highlight-color: #00f5d4;
-    /* Cyan néon pour le contraste */
+    /* Accents — Dragonfruit & dérivées */
+    --primary-color: #FF4696;
+    /* Dragonfruit — couleur principale */
+    --secondary-color: #cc2070;
+    /* Dragonfruit assombri */
+    --accent-color: #ff85bf;
+    /* Dragonfruit clair / pastel */
+    --highlight-color: #FF4696;
+    /* Dragonfruit pour les highlights */
 
-    /* Glassmorphism */
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --glass-blur: 10px;
+    /* Violet doux pour les éléments secondaires */
+    --violet-soft: #9b6db5;
+    --violet-muted: rgba(155, 109, 181, 0.3);
+
+    /* Glassmorphism — teinte violette */
+    --glass-bg: rgba(255, 70, 150, 0.06);
+    --glass-border: rgba(255, 70, 150, 0.18);
+    --glass-blur: 12px;
 
     /* Fonts */
-    --font-main: 'Open Sans', sans-serif;
+    --font-main: 'Outfit', 'Open Sans', sans-serif;
 
     /* Spacing */
     --container-width: 1200px;

@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noa Second | Game Designer Technique & Directeur Créatif UE5</title>
+    <title>Noa Second | Game Designer Technique &amp; Directeur Créatif UE5</title>
     <meta name="description"
-        content="Portfolio de Noa Second, Game Designer Technique & Directeur Créatif spécialisé Unreal Engine 5. Conception, Level Design et QA pour projets de jeux vidéo indépendants. Découvrez LaCorbeille Studio, Le LAB, Mindoor...">
+        content="Portfolio de Noa Second, Game Designer Technique &amp; Directeur Créatif spécialisé Unreal Engine 5. Découvrez Laissez-nous cuisiner !, AI.VI, Le LAB, Overscoped, InputMapper...">
     <meta name="keywords"
-        content="Noa Second, Technical Game Designer, Game Designer, Directeur Créatif, Portfolio, Jeu Vidéo, Unreal Engine 5, UE5, Unity, Level Design, QA Manager, Game Development, Blueprints Unreal Engine, Freelance Game Designer">
+        content="Noa Second, Technical Game Designer, Game Designer, Directeur Créatif, Portfolio, Jeu Vidéo, Unreal Engine 5, UE5, Unity, Game Development, Blueprints, FIJ Cannes, Out of Time">
     <meta name="author" content="Noa Second">
 
-    <!-- Schema.org for Google -->
+    <!-- Schema.org -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -24,14 +24,14 @@
         "https://github.com/NoaSecond",
         "https://instagram.com/noa.second"
       ],
-      "knowsAbout": ["Game Design", "Unreal Engine 5", "Blueprint", "Level Design", "Quality Assurance"]
+      "knowsAbout": ["Game Design", "Unreal Engine 5", "Blueprint", "Level Design", "Quality Assurance", "Multiplayer"]
     }
     </script>
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://noasecond.com/">
-    <meta property="og:title" content="Noa Second | Game Designer Technique & Directeur Créatif UE5">
+    <meta property="og:title" content="Noa Second | Game Designer Technique &amp; Directeur Créatif UE5">
     <meta property="og:description"
         content="Découvrez le portfolio de Noa Second : Game Design Technique, Direction Créative et développement Unreal Engine 5.">
     <meta property="og:image" content="https://noasecond.com/assets/img/noa%20second.webp">
@@ -39,7 +39,7 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://noasecond.com/">
-    <meta property="twitter:title" content="Noa Second | Game Designer Technique & Directeur Créatif UE5">
+    <meta property="twitter:title" content="Noa Second | Game Designer Technique &amp; Directeur Créatif UE5">
     <meta property="twitter:description"
         content="Découvrez le portfolio de Noa Second : Game Design Technique, Direction Créative et développement Unreal Engine 5.">
     <meta property="twitter:image" content="https://noasecond.com/assets/img/noa%20second.webp">
@@ -49,10 +49,10 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Fonts: Open Sans -->
+    <!-- Fonts: Outfit + Open Sans fallback -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet"
@@ -81,12 +81,12 @@
         <div class="star-layer star-layer-3"></div>
     </div>
 
-    <!-- FLOATING NAV (CENTER) -->
+    <!-- FLOATING NAV -->
     <nav class="floating-nav">
         <ul>
-            <li><a href="#hero" class="nav-link">Accueil</a></li>
-            <li><a href="#projects" class="nav-link">Projets</a></li>
-            <li><a href="#profile" class="nav-link">Profil</a></li>
+            <li><a href="#hero" class="nav-link" id="nav-accueil">Accueil</a></li>
+            <li><a href="#projects" class="nav-link" id="nav-projets">Projets</a></li>
+            <li><a href="#profile" class="nav-link" id="nav-profil">Profil</a></li>
         </ul>
     </nav>
 
@@ -107,7 +107,7 @@
     <section id="hero">
         <div class="container hero-content">
             <h1>Noa Second</h1>
-            <h3>Directeur Créatif • Game Designer • Développeur</h3>
+            <h3>Game Designer · Level Designer · Développeur</h3>
 
             <div class="glass-card contact-card" style="display:inline-block; padding:1rem 2rem; margin-bottom: 2rem;">
                 <p>
@@ -117,7 +117,7 @@
                         contact@noasecond.com
                     </a>
                 </p>
-                <p>
+                <p style="margin-top:0.5rem;">
                     <a href="tel:+33695874600" class="contact-link">
                         <span class="material-symbols-rounded"
                             style="vertical-align:middle; margin-right:8px;">call</span>
@@ -127,7 +127,7 @@
             </div>
 
             <div class="hero-actions">
-                <a href="assets/docs/CV_Noa_Second.pdf" target="_blank" class="btn btn-primary">
+                <a href="assets/docs/CV_Noa_Second.pdf" target="_blank" class="btn btn-primary" id="btn-cv">
                     <span class="material-symbols-rounded">download</span> Télécharger mon CV
                 </a>
 
@@ -147,7 +147,7 @@
             </div>
         </div>
 
-        <div class="scroll-down">
+        <div class="scroll-down" id="hero-scroll-btn">
             <span class="material-symbols-rounded" style="font-size: 40px;">keyboard_arrow_down</span>
         </div>
     </section>
@@ -158,24 +158,65 @@
             <h2>Mes Projets</h2>
             <div class="projects-grid">
 
-                <!-- Projet 1: LaCorbeille -->
-                <a href="projects/lacorbeille-studio.html" class="project-card"
-                    style="background-image: linear-gradient(rgba(5, 5, 16, 0.4), rgba(5, 5, 16, 0.9)), url('assets/img/banners/lacorbeille-thumb.webp');">
+                <!-- Projet 1: Laissez-nous cuisiner ! -->
+                <a href="projects/laissez-nous-cuisiner.html" class="project-card" id="card-lnc"
+                    style="background-image: linear-gradient(rgba(30, 16, 51, 0.3), rgba(18, 9, 32, 0.92)), url('assets/img/banners/lnc-thumb.jpg');">
                     <div class="project-content">
-                        <h3>LaCorbeille STUDIO</h3>
+                        <h3>Laissez-nous cuisiner !</h3>
                         <div class="project-tags">
-                            <span>Studio Indé</span>
+                            <span>Master 2</span>
                             <span>Direction Créative</span>
-                            <span>Game Design</span>
-                            <span>Unreal Engine</span>
+                            <span>FIJ Cannes</span>
+                            <span>~20 personnes</span>
                         </div>
                     </div>
                     <div class="card-bg-glow"></div>
                 </a>
 
-                <!-- Projet 2: Le LAB -->
-                <a href="projects/le-lab.html" class="project-card"
-                    style="background-image: linear-gradient(rgba(5, 5, 16, 0.4), rgba(5, 5, 16, 0.9)), url('assets/img/banners/lelab-thumb.webp');">
+                <!-- Projet 2: AI.VI -->
+                <a href="projects/aivi.html" class="project-card" id="card-aivi"
+                    style="background-image: linear-gradient(rgba(30, 16, 51, 0.3), rgba(18, 9, 32, 0.92)), url('assets/img/banners/aivi-thumb.jpg');">
+                    <div class="project-content">
+                        <h3>AI.VI</h3>
+                        <div class="project-tags">
+                            <span>Stage</span>
+                            <span>Steam</span>
+                            <span>Multijoueur</span>
+                            <span>Blueprint UE5</span>
+                        </div>
+                    </div>
+                    <div class="card-bg-glow"></div>
+                </a>
+
+                <!-- Projet 3: Overscoped -->
+                <a href="projects/overscoped.html" class="project-card" id="card-overscoped"
+                    style="background-image: linear-gradient(rgba(30, 16, 51, 0.3), rgba(18, 9, 32, 0.92)), url('assets/img/banners/overscoped-thumb.jpg');">
+                    <div class="project-content">
+                        <h3>Overscoped</h3>
+                        <div class="project-tags">
+                            <span>Tech Prototype</span>
+                            <span>UE5 &amp; C++</span>
+                        </div>
+                    </div>
+                    <div class="card-bg-glow"></div>
+                </a>
+
+                <!-- Projet 4: InputMapper -->
+                <a href="projects/inputmapper.html" class="project-card" id="card-inputmapper"
+                    style="background-image: linear-gradient(rgba(30, 16, 51, 0.3), rgba(18, 9, 32, 0.92)), url('assets/img/banners/inputmapper-thumb.jpg');">
+                    <div class="project-content">
+                        <h3>InputMapper</h3>
+                        <div class="project-tags">
+                            <span>Outil GDD</span>
+                            <span>Web App</span>
+                        </div>
+                    </div>
+                    <div class="card-bg-glow"></div>
+                </a>
+
+                <!-- Projet 5: Le LAB -->
+                <a href="projects/le-lab.html" class="project-card" id="card-lelab"
+                    style="background-image: linear-gradient(rgba(30, 16, 51, 0.3), rgba(18, 9, 32, 0.92)), url('assets/img/banners/lelab-thumb.webp');">
                     <div class="project-content">
                         <h3>Le LAB</h3>
                         <div class="project-tags">
@@ -185,73 +226,6 @@
                     </div>
                     <div class="card-bg-glow"></div>
                 </a>
-
-                <!-- Projet 3: Mindoor -->
-                <a href="projects/mindoor.html" class="project-card"
-                    style="background-image: linear-gradient(rgba(5, 5, 16, 0.4), rgba(5, 5, 16, 0.9)), url('assets/img/banners/mindoor-thumb.jpg');">
-                    <div class="project-content">
-                        <h3>Mindoor</h3>
-                        <div class="project-tags">
-                            <span>Lead Game Design</span>
-                            <span>QA Manager</span>
-                        </div>
-                    </div>
-                    <div class="card-bg-glow"></div>
-                </a>
-
-                <!-- Projet 4: Ananke -->
-                <a href="projects/ananke.html" class="project-card"
-                    style="background-image: linear-gradient(rgba(5, 5, 16, 0.4), rgba(5, 5, 16, 0.9)), url('assets/img/banners/ananke-thumb.jpg');">
-                    <div class="project-content">
-                        <h3>Ananke</h3>
-                        <div class="project-tags">
-                            <span>Outil Kanban</span>
-                            <span>QA & Prod</span>
-                        </div>
-                    </div>
-                    <div class="card-bg-glow"></div>
-                </a>
-
-                <!-- Projet 5: InputMapper -->
-                <a href="projects/inputmapper.html" class="project-card"
-                    style="background-image: linear-gradient(rgba(5, 5, 16, 0.4), rgba(5, 5, 16, 0.9)), url('assets/img/banners/inputmapper-thumb.jpg');">
-                    <div class="project-content">
-                        <h3>InputMapper</h3>
-                        <div class="project-tags">
-                            <span>Outil GDD</span>
-                            <span>Production</span>
-                        </div>
-                    </div>
-                    <div class="card-bg-glow"></div>
-                </a>
-
-                <!-- Projet 6: Sk@t3rZ’ -->
-                <a href="projects/skaterz.html" class="project-card"
-                    style="background-image: linear-gradient(rgba(5, 5, 16, 0.4), rgba(5, 5, 16, 0.9)), url('assets/img/banners/skaterz-thumb.jpg');">
-                    <div class="project-content">
-                        <h3>Sk@t3rZ’</h3>
-                        <div class="project-tags">
-                            <span>Game Design</span>
-                            <span>Unity</span>
-                            <span>Zombie Shoot’em Up</span>
-                        </div>
-                    </div>
-                    <div class="card-bg-glow"></div>
-                </a>
-
-                <!-- Projet 7: Overscoped -->
-                <a href="projects/overscoped.html" class="project-card"
-                    style="background-image: linear-gradient(rgba(5, 5, 16, 0.4), rgba(5, 5, 16, 0.9)), url('assets/img/banners/overscoped-thumb.jpg');">
-                    <div class="project-content">
-                        <h3>Overscoped</h3>
-                        <div class="project-tags">
-                            <span>Tech Prototype</span>
-                            <span>UE5 & C++</span>
-                        </div>
-                    </div>
-                    <div class="card-bg-glow"></div>
-                </a>
-
 
             </div>
         </div>
@@ -266,24 +240,24 @@
                 <div class="glass-card">
                     <h3>Certifications</h3>
                     <a href="https://drive.google.com/file/d/1d_BPM0_66XeEmD5ikJNU6SLqMK7hgOwQ/view?usp=sharing"
-                        target="_blank" class="cert-item">
-                        <span class="material-symbols-rounded">verified</span>
+                        target="_blank" class="cert-item" id="cert-toeic">
+                        <span class="material-symbols-rounded" style="color: var(--primary-color);">verified</span>
                         <div>
                             <h4>TOEIC (875/990)</h4>
                             <p class="text-sm text-gray">Anglais B2/C1</p>
                         </div>
                     </a>
                     <a href="https://drive.google.com/file/d/1woT-gOpeOSQHdX2Gv_EbaqZObSavQ0gM/view?usp=sharing"
-                        target="_blank" class="cert-item">
-                        <span class="material-symbols-rounded">security</span>
+                        target="_blank" class="cert-item" id="cert-anssi">
+                        <span class="material-symbols-rounded" style="color: var(--primary-color);">security</span>
                         <div>
                             <h4>MOOC Cybersécurité ANSSI</h4>
                             <p class="text-sm text-gray">Hygiène informatique</p>
                         </div>
                     </a>
                     <a href="https://drive.google.com/file/d/1suU0bn5ICbaypn_LxCikA-HIAd67Bkdt/view?usp=sharing"
-                        target="_blank" class="cert-item">
-                        <span class="material-symbols-rounded">network_check</span>
+                        target="_blank" class="cert-item" id="cert-cisco">
+                        <span class="material-symbols-rounded" style="color: var(--primary-color);">network_check</span>
                         <div>
                             <h4>Cisco Cybersécurité</h4>
                             <p class="text-sm text-gray">Introduction</p>
@@ -291,29 +265,22 @@
                     </a>
                 </div>
 
-                <!-- Intérêts -->
+                <!-- Centres d'intérêt -->
                 <div class="glass-card">
                     <h3>Centres d'intérêt</h3>
-                    <p style="margin-bottom: 20px;">Ce qui me passionne et nourrit ma créativité au quotidien.</p>
+                    <p style="margin-bottom: 20px; color: var(--violet-soft);">Ce qui me passionne et nourrit ma créativité au quotidien.</p>
                     <div class="interests-cloud">
-                        <!-- Pro -->
                         <span class="interest-tag">Game Design</span>
                         <span class="interest-tag">Level Design</span>
                         <span class="interest-tag">Développement</span>
                         <span class="interest-tag">Management</span>
-
-                        <!-- Passion / MaxiGeek -->
                         <span class="interest-tag">Jeux Vidéo</span>
                         <span class="interest-tag">Magic The Gathering</span>
                         <span class="interest-tag">JDR</span>
-
-                        <!-- Arts & Culture -->
                         <span class="interest-tag">Art</span>
                         <span class="interest-tag">Photographie</span>
                         <span class="interest-tag">Musique</span>
                         <span class="interest-tag">Livres</span>
-
-                        <!-- Autre -->
                         <span class="interest-tag">Sport</span>
                     </div>
                 </div>
@@ -322,7 +289,7 @@
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 2rem; color: #666; font-size: 0.9rem;">
+    <footer style="text-align: center; padding: 2rem; color: var(--violet-soft); font-size: 0.9rem; border-top: 1px solid var(--glass-border);">
         <p>&copy; 2026 Noa Second. Tous droits réservés.</p>
     </footer>
 

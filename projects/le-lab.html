@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le LAB | Prototype FPS Unreal Engine 5 & Arena Creator</title>
+    <title>Le LAB | Prototype FPS Unreal Engine 5 &amp; Arena Creator</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/projects/project-detail.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
@@ -19,19 +19,19 @@
         content="Découvrez Le LAB, un prototype de FPS dynamique avec éditeur d'arènes intégré. Game Design technique et développement Unreal Engine 5 par Noa Second.">
     <meta property="og:title" content="Le LAB | Noa Second - Technical Game Design UE5">
     <meta property="og:description"
-        content="FPS & Arena Creator. Game Design technique & Développement Unreal Engine 5 par Noa Second.">
+        content="FPS &amp; Arena Creator. Game Design technique &amp; Développement Unreal Engine 5 par Noa Second.">
     <meta property="og:image" content="https://noasecond.com/assets/img/banners/lelab-banner.jpg">
     <meta property="og:type" content="article">
     <link rel="canonical" href="https://noasecond.com/projects/le-lab.html">
     <link rel="manifest" href="../assets/favicon/site.webmanifest">
 
-    <!-- Schema.org for Google -->
+    <!-- Schema.org -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "CreativeWork",
       "name": "Le LAB",
-      "headline": "Prototype FPS Unreal Engine 5 & Arena Creator",
+      "headline": "Prototype FPS Unreal Engine 5 &amp; Arena Creator",
       "description": "Le LAB est un FPS dynamique avec éditeur d'arènes intégré. Prototype technique développé sur Unreal Engine 5.",
       "author": {
         "@type": "Person",
@@ -52,24 +52,31 @@
         <div class="star-layer star-layer-3"></div>
     </div>
 
-    <a href="../index.html" class="back-btn">
+    <!-- PARALLAX BG -->
+    <div class="parallax-wrapper">
+        <div class="parallax-shape shape-1"></div>
+        <div class="parallax-shape shape-2"></div>
+        <div class="parallax-shape shape-3"></div>
+    </div>
+
+    <a href="../index.html" class="back-btn" id="back-home">
         <span class="material-symbols-rounded">arrow_back</span> Retour
     </a>
 
     <header class="project-hero">
         <div class="hero-bg"
-            style="background: linear-gradient(rgba(5, 5, 16, 0.2), rgba(5, 5, 16, 0.8)), url('../assets/img/banners/lelab-banner.jpg') no-repeat center center/cover;"
+            style="background: linear-gradient(rgba(30, 16, 51, 0.2), rgba(18, 9, 32, 0.88)), url('../assets/img/banners/lelab-banner.jpg') no-repeat center center/cover;"
             fetchpriority="high">
         </div>
         <div class="container hero-content">
             <h1>Le LAB</h1>
             <div class="project-meta">
                 <div class="meta-item">
-                    <span class="material-symbols-rounded">person</span>
-                    <span>Game Designer & Développeur</span>
+                    <span class="material-symbols-rounded" style="color: var(--primary-color);">person</span>
+                    <span>Game Designer &amp; Développeur</span>
                 </div>
                 <div class="meta-item">
-                    <span class="material-symbols-rounded">settings</span>
+                    <span class="material-symbols-rounded" style="color: var(--primary-color);">settings</span>
                     <span>Unreal Engine 5.5.4</span>
                 </div>
             </div>
@@ -80,7 +87,7 @@
         </div>
     </header>
 
-    <main id="project-details" class="container" style="padding: 4rem 20px;">
+    <main id="project-details" class="container">
         <div class="glass-card hidden-reveal">
             <h2>Vision du Projet</h2>
             <p><strong>Le LAB</strong> est un FPS dynamique né d'une volonté de fusionner l'adrénaline des shooters
@@ -89,13 +96,13 @@
                 modulables.</p>
             <br>
             <p>Le jeu plonge le joueur dans un programme d'entraînement neuronal expérimental géré par <strong>Orion
-                    Tech & Military</strong>. Sous l'œil d'<strong>ARES</strong>, une IA centrale analytique, les
+                    Tech &amp; Military</strong>. Sous l'œil d'<strong>ARES</strong>, une IA centrale analytique, les
                 soldats s'affrontent dans des arènes qu'ils conçoivent eux-mêmes à l'aide d'un
                 <strong>MultiTool</strong> polyvalent.
             </p>
 
-            <h3 style="margin-top: 2rem; font-size: 1.5rem;">Piliers du Gameplay :</h3>
-            <ul style="list-style: disc; margin-left: 20px; margin-top: 1rem; color: #ccc; line-height: 1.6;">
+            <h3 style="margin-top: 2rem; font-size: 1.4rem;">Piliers du Gameplay :</h3>
+            <ul style="list-style: disc; margin-left: 20px; margin-top: 1rem; color: var(--text-color); line-height: 1.8;">
                 <li><strong>Éditeur de Cartes Intégré :</strong> Un système de "MultiTool" intuitif permettant de
                     construire et modifier son terrain de jeu en quelques minutes.</li>
                 <li><strong>Mobilité Fluide :</strong> Un système de déplacement 3C complet (course, glissade, saut)
@@ -109,24 +116,24 @@
 
         <div class="glass-card hidden-reveal" style="margin-top: 2rem;">
             <h2>Ressources du Projet</h2>
-            <p>Retrouvez ci-dessous la documentation complète ainsi que la dernière version jouable du projet.</p>
+            <p style="color: var(--violet-soft);">Retrouvez ci-dessous la documentation complète ainsi que la dernière version jouable du projet.</p>
             <div class="project-meta" style="margin-top: 1.5rem; gap: 1.5rem;">
                 <div class="meta-item">
                     <span class="material-symbols-rounded" style="color: #fbbc05;">description</span>
                     <a href="https://docs.google.com/document/d/14bGf-YOH9CMDDmxBTyCbBamEVIHNaNtkqXiLrCXnZKo/edit?usp=sharing"
-                        target="_blank" class="contact-link">Consulter le GDD</a>
+                        target="_blank" class="contact-link" id="link-gdd">Consulter le GDD</a>
                 </div>
                 <div class="meta-item">
-                    <span class="material-symbols-rounded" style="color: var(--highlight-color);">download</span>
+                    <span class="material-symbols-rounded" style="color: var(--primary-color);">download</span>
                     <a href="https://drive.google.com/file/d/1OM4FHZ8fpJVaC7zn7EDGZZqtlBzwODoi/view?usp=sharing"
-                        target="_blank" class="contact-link">Télécharger le Prototype Win64</a>
+                        target="_blank" class="contact-link" id="link-build">Télécharger le Prototype Win64</a>
                 </div>
             </div>
         </div>
 
         <div class="glass-card hidden-reveal" style="margin-top: 2rem;">
             <h2>Galerie du Projet</h2>
-            <p>Aperçus visuels de l'éditeur d'arènes et du gameplay dynamique.</p>
+            <p style="color: var(--violet-soft);">Aperçus visuels de l'éditeur d'arènes et du gameplay dynamique.</p>
             <div class="project-gallery">
                 <div class="gallery-item">
                     <img src="../assets/gallery/le-lab/Le%20LAB%20GameCover.jpg" alt="Le LAB Game Cover" loading="lazy"
@@ -145,14 +152,14 @@
                     <img src="../assets/gallery/le-lab/Le%20LAB_4.jpg" alt="Le LAB 4" loading="lazy" decoding="async">
                 </div>
                 <div class="gallery-item">
-                    <img src="../assets/gallery/le-lab/Orion%20Tech&Military.png" alt="Orion Tech & Military"
+                    <img src="../assets/gallery/le-lab/Orion%20Tech&Military.png" alt="Orion Tech &amp; Military"
                         loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
     </main>
 
-    <footer style="text-align: center; padding: 2rem; color: #666; font-size: 0.9rem;">
+    <footer style="text-align: center; padding: 2rem; color: var(--violet-soft); font-size: 0.9rem; border-top: 1px solid var(--glass-border);">
         <p>&copy; 2026 Noa Second. Tous droits réservés.</p>
     </footer>
 

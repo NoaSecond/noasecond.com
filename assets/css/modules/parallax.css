@@ -1,5 +1,5 @@
 /* =========================================
-   PARALLAX BACKGROUND
+   PARALLAX BACKGROUND — Dragonfruit x NightViolet
    ========================================= */
 .parallax-wrapper {
     position: fixed;
@@ -9,41 +9,42 @@
     height: 100%;
     overflow: hidden;
     z-index: -1;
-    /* Behind everything */
     pointer-events: none;
 }
 
 .parallax-shape {
     position: absolute;
     border-radius: 50%;
-    filter: blur(100px);
-    /* Very strong blur for dreamy effect */
-    opacity: 0.3;
+    filter: blur(120px);
+    opacity: 0.25;
     will-change: transform;
 }
 
 .shape-1 {
-    width: 600px;
-    height: 600px;
+    width: 700px;
+    height: 700px;
     background: var(--primary-color);
-    top: -200px;
-    left: -100px;
+    /* Dragonfruit */
+    top: -250px;
+    left: -150px;
 }
 
 .shape-2 {
     width: 500px;
     height: 500px;
-    background: var(--secondary-color);
+    background: #5a1a80;
+    /* Violet profond */
     bottom: -100px;
     right: -100px;
 }
 
 .shape-3 {
-    width: 300px;
-    height: 300px;
-    background: var(--highlight-color);
-    top: 30%;
-    left: 40%;
-    opacity: 0.15;
-    /* Sbtle highlight in the middle */
-}
+    width: 350px;
+    height: 350px;
+    background: var(--primary-color);
+    /* Dragonfruit central */
+    top: 40%;
+    left: 45%;
+    opacity: 0.12;
+    filter: blur(80px);
+}

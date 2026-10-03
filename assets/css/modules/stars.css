@@ -68,9 +68,9 @@
 
 .star-layer-2 {
     background-image:
-        radial-gradient(calc(var(--star-taille-max) * 0.8) calc(var(--star-taille-max) * 0.8) at 15% 25%, var(--secondary-color), transparent),
-        radial-gradient(calc(var(--star-taille-min) * 1.2) calc(var(--star-taille-min) * 1.2) at 55% 15%, var(--highlight-color), transparent),
-        radial-gradient(calc(var(--star-taille-max) * 0.8) calc(var(--star-taille-max) * 0.8) at 90% 80%, var(--accent-color), transparent);
+        radial-gradient(calc(var(--star-taille-max) * 0.8) calc(var(--star-taille-max) * 0.8) at 15% 25%, var(--primary-color), transparent),
+        radial-gradient(calc(var(--star-taille-min) * 1.2) calc(var(--star-taille-min) * 1.2) at 55% 15%, var(--accent-color), transparent),
+        radial-gradient(calc(var(--star-taille-max) * 0.8) calc(var(--star-taille-max) * 0.8) at 90% 80%, var(--violet-soft, #9b6db5), transparent);
     background-size: calc(var(--star-densite) * 1.4) calc(var(--star-densite) * 1.4);
     animation:
         twinkle var(--star-vitesse-max) ease-in-out infinite alternate-reverse,
